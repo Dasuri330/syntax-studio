@@ -1,59 +1,236 @@
-# SyntaxStudio
+# Syntax Studio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.8.
+> A modern personal portfolio website built with Angular and Bootstrap.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+**Syntax Studio** is my personal developer portfolio website, created to showcase my skills, projects, experience, and background as a software developer.
+
+The portfolio uses a modern dark-themed interface with cyan and purple accents, responsive layouts, and reusable Angular components.
+
+## Features
+
+- Modern dark-themed portfolio design
+- Responsive layout for desktop, tablet, and mobile
+- Hero section
+- Featured projects section
+- Project showcase
+- About section
+- Skills and technologies
+- Experience section
+- Contact section
+- Responsive navigation
+- Reusable Angular components
+- Client-side routing
+
+## Technologies
+
+### Frontend
+
+- Angular 22
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap
+- Bootstrap Icons
+
+### Development Tools
+
+- Visual Studio Code
+- Git
+- GitHub
+- npm
+
+## Project Structure
+
+```text
+syntax-studio/
+│
+├── src/
+│   │
+│   ├── app/
+│   │   ├── app.config.ts
+│   │   ├── app.css
+│   │   ├── app.html
+│   │   ├── app.routes.ts
+│   │   ├── app.spec.ts
+│   │   └── app.ts
+│   │
+│   ├── components/
+│   │   └── navbar/
+│   │       ├── navbar.component.css
+│   │       ├── navbar.component.html
+│   │       └── navbar.component.ts
+│   │
+│   ├── pages/
+│   │   ├── home/
+│   │   │   ├── home.component/
+│   │   │   │   ├── home.component.css
+│   │   │   │   ├── home.component.html
+│   │   │   │   ├── home.component.spec.ts
+│   │   │   │   └── home.component.ts
+│   │   │   │
+│   │   │   └── featured-projects.component/
+│   │   │       ├── featured-projects.component.css
+│   │   │       ├── featured-projects.component.html
+│   │   │       ├── featured-projects.component.spec.ts
+│   │   │       └── featured-projects.component.ts
+│   │   │
+│   │   └── project.component/
+│   │       ├── project.component.css
+│   │       ├── project.component.html
+│   │       ├── project.component.spec.ts
+│   │       └── project.component.ts
+│   │
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+│
+├── public/
+├── angular.json
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- npm
+- Angular CLI
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Dasuri330/syntax-studio.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd syntax-studio
+```
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+### Development Server
+
+Start the Angular development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open your browser and navigate to:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The application will automatically reload whenever you modify the source files.
 
-```bash
-ng generate --help
-```
+## Building the Project
 
-## Building
-
-To build the project run:
+To create a production build:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The compiled application will be generated in the `dist/` directory.
 
-## Running unit tests
+## Running Tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+To execute the unit tests:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+The project uses **Vitest** as its test runner.
 
-For end-to-end (e2e) testing, run:
+## Preview
 
-```bash
-ng e2e
-```
+> Screenshots will be added as the portfolio design progresses.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+<!--
+Example:
 
-## Additional Resources
+![Syntax Studio Homepage](./screenshots/homepage.png)
+-->
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Project Goals
+
+The main goals of **Syntax Studio** are to:
+
+- Build a professional personal portfolio
+- Practice modern Angular development
+- Improve frontend development skills
+- Apply responsive web design principles
+- Demonstrate component-based architecture
+- Showcase academic and professional projects
+- Create a portfolio that can be shared with potential employers
+
+## Featured Projects
+
+### AquaLuminus
+
+A mobile UV water filtration monitoring system designed to provide real-time water quality and system insights.
+
+**Technologies:**
+
+- Angular
+- React
+- Tailwind CSS
+- Python
+
+### CGH Digitalization
+
+A healthcare digitalization project focused on supporting patient care workflows and clinical operations.
+
+**Technologies:**
+
+- AngularJS
+- JavaScript
+- SCSS
+- Bootstrap
+- Docker
+
+## Learning Focus
+
+This project is also being used to continuously improve my skills in:
+
+- Angular
+- TypeScript
+- Responsive Web Design
+- Component-Based Architecture
+- Git & GitHub
+- UI/UX Implementation
+- Frontend Development
+- Full-Stack Development
+
+## Author
+
+**Dexter Cabubas**
+
+BS Information Technology  
+Mobile and Internet Technology
+
+### Connect With Me
+
+- GitHub: [@Dasuri330](https://github.com/Dasuri330)
+
+---
+
+If you find this project interesting, feel free to explore the repository.
