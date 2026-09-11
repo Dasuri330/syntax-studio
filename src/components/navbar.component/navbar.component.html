@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg portfolio-navbar">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand portfolio-logo" routerLink="/">
+      <span class="logo-bracket">&lt;</span>
+      DEXTER
+      <span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#portfolioNavbar"
+      aria-controls="portfolioNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation -->
+    <div class="collapse navbar-collapse" id="portfolioNavbar">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/"> HOME </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/projects"> PROJECTS </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about"> ABOUT </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact"> CONTACT </a>
+        </li>
+      </ul>
+
+      <a routerLink="/contact" class="navbar-cta">
+        LET'S TALK
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</nav>

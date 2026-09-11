@@ -1,0 +1,335 @@
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section {
+  padding: 120px 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 45px;
+}
+
+.section-number {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #43e4d0;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.section-header h2 span {
+  color: #777f81;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #43e4d0;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.section-label {
+  color: #697476;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.intro-title {
+  max-width: 900px;
+
+  margin: 0 0 30px;
+
+  font-size: clamp(36px, 5vw, 65px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.intro-title span {
+  color: #43e4d0;
+}
+
+.intro-description {
+  max-width: 700px;
+
+  color: #818c8e;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-section {
+  background: #070b0c;
+}
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-card {
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  padding: 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: background 0.25s ease;
+}
+
+.skill-card:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-card:hover {
+  background: rgba(67, 228, 208, 0.04);
+}
+
+.skill-index {
+  color: #43e4d0;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.skill-name {
+  flex: 1;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.skill-card i {
+  color: #687375;
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience-heading {
+  max-width: 250px;
+
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.experience-heading span {
+  color: #777f81;
+}
+
+.experience-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 150px 1fr 30px;
+
+  gap: 30px;
+
+  padding: 30px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.experience-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.experience-year {
+  color: #687375;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.experience-content h3 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.experience-content h4 {
+  margin: 5px 0 15px;
+
+  color: #43e4d0;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.experience-content p {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: #7d888a;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.experience-arrow {
+  color: #43e4d0;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+  padding: 100px 0;
+
+  background: radial-gradient(circle at 50% 50%, rgba(140, 103, 255, 0.12), transparent 45%);
+}
+
+.contact-box {
+  padding: 70px 30px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+
+  background: rgba(12, 18, 19, 0.7);
+}
+
+.contact-box h2 {
+  max-width: 800px;
+
+  margin: 0 auto 20px;
+
+  font-size: clamp(45px, 7vw, 85px);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+
+.contact-box h2 span {
+  color: #43e4d0;
+}
+
+.contact-box p {
+  margin-bottom: 30px;
+
+  color: #7e898b;
+
+  font-size: 15px;
+}
+
+.contact-box .primary-button {
+  display: inline-flex;
+}
+
+/* =========================================================
+   SECTION RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+  .section {
+    padding: 85px 0;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .experience-heading {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-header h2 {
+    font-size: 42px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card:nth-child(odd) {
+    border-right: none;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr 20px;
+    gap: 10px;
+  }
+
+  .experience-year {
+    grid-column: 1 / -1;
+  }
+
+  .experience-content {
+    grid-column: 1;
+  }
+
+  .experience-arrow {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .contact-box {
+    padding: 50px 20px;
+  }
+
+  .contact-box h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+}

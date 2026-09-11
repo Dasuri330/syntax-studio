@@ -1,0 +1,236 @@
+<app-navbar></app-navbar>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero-section">
+  <div class="hero-glow hero-glow-cyan"></div>
+  <div class="hero-glow hero-glow-purple"></div>
+
+  <div class="container">
+    <div class="row align-items-center hero-content">
+      <!-- Hero text -->
+      <div class="col-lg-8">
+        <div class="hero-label">
+          <span class="status-dot"></span>
+          SOFTWARE DEVELOPER
+        </div>
+
+        <h1 class="hero-title">
+          HELLO, I'M
+
+          <span class="gradient-text"> DEXTER. </span>
+
+          <br />
+
+          I BUILD
+
+          <span class="muted-text"> DIGITAL </span>
+
+          <br />
+
+          EXPERIENCES.
+        </h1>
+
+        <p class="hero-description">
+          Information Technology graduate and software developer focused on building modern,
+          responsive, and user-friendly web applications.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/projects" class="primary-button">
+            VIEW MY WORK
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+          <a routerLink="/contact" class="secondary-button"> CONTACT ME </a>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL -->
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="hero-visual">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+
+          <div class="developer-card">
+            <div class="card-top">
+              <span>DEXTER.DEV</span>
+              <span>01 / 06</span>
+            </div>
+
+            <div class="code-content">
+              <span class="code-comment">// building the future</span>
+              <span class="code-indent">const developer = &#123;</span>
+              <span class="code-indent">&nbsp;&nbsp;name: 'Dexter',</span>
+              <span class="code-indent">&nbsp;&nbsp;role: 'Full Stack',</span>
+              <span class="code-indent">&nbsp;&nbsp;stack: ['Angular', 'TS'],</span>
+              <span class="code-indent">&#125;;</span>
+            </div>
+
+            <div class="card-bottom">
+              <span>ANGULAR</span>
+              <span>TYPESCRIPT</span>
+              <span>SCSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="scroll-line"></span>
+    SCROLL
+  </div>
+</section>
+
+<!-- =========================================================
+     FEATURED PROJECTS
+========================================================= -->
+
+<app-featured-projects></app-featured-projects>
+
+<!-- =========================================================
+     ABOUT / INTRO
+========================================================= -->
+
+<section class="section intro-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <span class="section-number">02</span>
+
+        <p class="section-label">A LITTLE ABOUT ME</p>
+      </div>
+
+      <div class="col-lg-8">
+        <h2 class="intro-title">
+          I LIKE TURNING
+          <span>IDEAS</span>
+          INTO
+          <span>FUNCTIONAL</span>
+          DIGITAL EXPERIENCES.
+        </h2>
+
+        <p class="intro-description">
+          I'm an Information Technology graduate specializing in Mobile and Internet Technology. My
+          experience includes developing enterprise applications, working with Angular-based
+          systems, collaborating with development teams, and supporting real-world software
+          projects.
+        </p>
+
+        <a routerLink="/about" class="text-link">
+          MORE ABOUT ME
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section class="section skills-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="section-number">03</span>
+
+        <h2>
+          TECH
+          <span>STACK.</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      @for (skill of skills; track skill) {
+        <div class="skill-card">
+          <span class="skill-index">
+            {{ ($index + 1).toString().padStart(2, '0') }}
+          </span>
+
+          <span class="skill-name">
+            {{ skill }}
+          </span>
+
+          <i class="bi bi-arrow-up-right"></i>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section class="section experience-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <span class="section-number">04</span>
+
+        <h2 class="experience-heading">
+          MY
+          <span>EXPERIENCE.</span>
+        </h2>
+      </div>
+
+      <div class="col-lg-8">
+        @for (experience of experiences; track experience.role) {
+          <div class="experience-item">
+            <div class="experience-year">
+              {{ experience.year }}
+            </div>
+
+            <div class="experience-content">
+              <h3>
+                {{ experience.role }}
+              </h3>
+
+              <h4>
+                {{ experience.company }}
+              </h4>
+
+              <p>
+                {{ experience.description }}
+              </p>
+            </div>
+
+            <i class="bi bi-arrow-up-right experience-arrow"></i>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT CTA
+========================================================= -->
+
+<section class="contact-section">
+  <div class="container position-relative">
+    <div class="contact-box">
+      <span class="section-number"> 05 </span>
+
+      <h2>
+        HAVE A PROJECT
+        <span>IN MIND?</span>
+      </h2>
+
+      <p>I'm always open to discussing software projects, opportunities, and ideas.</p>
+
+      <a routerLink="/contact" class="primary-button">
+        LET'S TALK
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

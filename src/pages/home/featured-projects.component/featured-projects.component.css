@@ -1,0 +1,452 @@
+:host {
+  display: block;
+}
+
+.featured-section {
+  padding: 120px 0;
+
+  background: #070b0c;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 45px;
+}
+
+.section-number {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #43e4d0;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #f3f5f5;
+
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 0.9;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+.section-heading h2 span {
+  color: #6e7779;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #43e4d0;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-decoration: none;
+}
+
+.view-all:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card {
+  display: block;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  background: #0c1213;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(67, 228, 208, 0.3);
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+.project-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  color: #43e4d0;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   PROJECT VISUAL
+========================================================= */
+
+.project-visual {
+  position: relative;
+
+  height: 340px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.aqua-visual {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.15), transparent 45%), #0a1011;
+}
+
+.cgh-visual {
+  height: 290px;
+
+  background: radial-gradient(circle at 70% 30%, rgba(137, 95, 255, 0.2), transparent 45%), #0a0e10;
+}
+
+/* =========================================================
+   AQUA DASHBOARD
+========================================================= */
+
+.dashboard {
+  width: 72%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+
+  background: #11191a;
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+
+  transform: perspective(1000px) rotateY(-8deg) rotateX(2deg);
+
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .dashboard {
+  transform: perspective(1000px) rotateY(-3deg) rotateX(1deg) scale(1.02);
+}
+
+.dashboard-top {
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding-left: 10px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dashboard-top span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #596264;
+}
+
+.dashboard-body {
+  display: flex;
+
+  height: 220px;
+}
+
+.dashboard-sidebar {
+  width: 18%;
+
+  padding: 15px 8px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dashboard-sidebar div {
+  width: 70%;
+  height: 5px;
+
+  margin: 0 auto 17px;
+
+  border-radius: 4px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-sidebar div:first-child {
+  background: #43e4d0;
+}
+
+.dashboard-content {
+  flex: 1;
+
+  padding: 18px;
+}
+
+.dashboard-heading {
+  width: 35%;
+  height: 8px;
+
+  margin-bottom: 20px;
+
+  border-radius: 4px;
+
+  background: #43e4d0;
+}
+
+.dashboard-stats {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-stats div {
+  flex: 1;
+
+  height: 45px;
+
+  border-radius: 5px;
+
+  background: #1b2526;
+}
+
+.dashboard-chart {
+  height: 85px;
+
+  margin-top: 15px;
+
+  border-radius: 6px;
+
+  background: linear-gradient(135deg, rgba(67, 228, 208, 0.12), rgba(125, 85, 255, 0.08));
+}
+
+/* =========================================================
+   CGH INTERFACE
+========================================================= */
+
+.medical-interface {
+  width: 62%;
+
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+
+  background: #111719;
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+
+  transform: rotate(4deg);
+}
+
+.medical-header {
+  width: 45%;
+  height: 8px;
+
+  margin-bottom: 20px;
+
+  border-radius: 4px;
+
+  background: #8c67ff;
+}
+
+.medical-row {
+  display: flex;
+  justify-content: space-between;
+
+  height: 30px;
+
+  margin-bottom: 8px;
+  padding: 8px;
+
+  border-radius: 5px;
+
+  background: #1a2325;
+}
+
+.medical-row span:first-child {
+  width: 35%;
+}
+
+.medical-row span:last-child {
+  width: 20%;
+}
+
+.medical-row span {
+  height: 5px;
+
+  border-radius: 4px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.project-content {
+  min-height: 220px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 28px;
+}
+
+.project-category {
+  color: #687476;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.project-content h3 {
+  margin: 10px 0;
+
+  color: #f3f5f5;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.project-content p {
+  max-width: 550px;
+
+  margin: 0 0 18px;
+
+  color: #7d898b;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.technology-list span {
+  padding: 5px 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+
+  color: #7d898b;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.project-arrow {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+
+  color: #43e4d0;
+
+  transition: all 0.25s ease;
+}
+
+.project-card:hover .project-arrow {
+  background: #43e4d0;
+  color: #07100f;
+
+  transform: rotate(45deg);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-visual {
+    height: 280px;
+  }
+}
+
+@media (max-width: 575px) {
+  .featured-section {
+    padding: 80px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 42px;
+  }
+
+  .project-content {
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .project-content h3 {
+    font-size: 23px;
+  }
+
+  .project-visual {
+    height: 230px;
+  }
+
+  .dashboard {
+    width: 85%;
+  }
+
+  .medical-interface {
+    width: 75%;
+  }
+}

@@ -1,0 +1,124 @@
+<section class="featured-section">
+  <div class="container">
+    <!-- Section heading -->
+    <div class="section-heading">
+      <div>
+        <span class="section-number">01</span>
+
+        <h2>
+          FEATURED
+          <span>PROJECTS.</span>
+        </h2>
+      </div>
+
+      <a routerLink="/projects" class="view-all">
+        VIEW ALL PROJECTS
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+
+    <!-- Projects -->
+    <div class="row g-4">
+      @for (project of projects; track project.number) {
+        <div class="col-lg-7" [class.col-lg-5]="$index === 1" [class.offset-lg-5]="$index === 1">
+          <a routerLink="/projects" class="project-card">
+            <!-- Visual -->
+            <div
+              class="project-visual"
+              [class.aqua-visual]="$index === 0"
+              [class.cgh-visual]="$index === 1"
+            >
+              @if ($index === 0) {
+                <div class="dashboard">
+                  <div class="dashboard-top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="dashboard-body">
+                    <div class="dashboard-sidebar">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+
+                    <div class="dashboard-content">
+                      <div class="dashboard-heading"></div>
+
+                      <div class="dashboard-stats">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+
+                      <div class="dashboard-chart"></div>
+                    </div>
+                  </div>
+                </div>
+              } @else {
+                <div class="medical-interface">
+                  <div class="medical-header"></div>
+
+                  <div class="medical-row">
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="medical-row">
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="medical-row">
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="medical-row">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              }
+
+              <div class="project-number">
+                {{ project.number }}
+              </div>
+            </div>
+
+            <!-- Information -->
+            <div class="project-content">
+              <div>
+                <span class="project-category">
+                  {{ project.category }}
+                </span>
+
+                <h3>
+                  {{ project.title }}
+                </h3>
+
+                <p>
+                  {{ project.description }}
+                </p>
+
+                <div class="technology-list">
+                  @for (technology of project.technologies; track technology) {
+                    <span>
+                      {{ technology }}
+                    </span>
+                  }
+                </div>
+              </div>
+
+              <div class="project-arrow">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
