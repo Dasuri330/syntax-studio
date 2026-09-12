@@ -3,7 +3,7 @@
     <!-- Section heading -->
     <div class="section-heading">
       <div>
-        <span class="section-number">01</span>
+        <span class="section-number">02</span>
 
         <h2>
           FEATURED
@@ -20,22 +20,64 @@
     <!-- Projects -->
     <div class="row g-4">
       @for (project of projects; track project.number) {
+        <!-- The grid classes stagger the 2nd project to the right. The 1st and 3rd project will align left. -->
         <div class="col-lg-7" [class.col-lg-5]="$index === 1" [class.offset-lg-5]="$index === 1">
           <a routerLink="/projects" class="project-card">
             <!-- Visual -->
             <div
               class="project-visual"
-              [class.aqua-visual]="$index === 0"
-              [class.cgh-visual]="$index === 1"
+              [class.cgh-visual]="$index === 0"
+              [class.parking-visual]="$index === 1"
+              [class.aqua-visual]="$index === 2"
             >
               @if ($index === 0) {
-                <div class="dashboard">
-                  <div class="dashboard-top">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <!-- Index 0: CGH Digitalization -->
+                <div class="medical-interface">
+                  <div class="medical-header"></div>
+                  <div class="medical-row"><span></span><span></span></div>
+                  <div class="medical-row"><span></span><span></span></div>
+                  <div class="medical-row"><span></span><span></span></div>
+                  <div class="medical-row"><span></span><span></span></div>
+                </div>
+              } @else if ($index === 1) {
+                <!-- Index 1: MACEA Permit Processing System -->
+                <div class="permit-interface">
+                  <div class="permit-toolbar">
+                    <span class="permit-filter"></span>
+                    <span class="permit-filter short"></span>
+                    <span class="permit-badge">EXPORT</span>
                   </div>
-
+                  <div class="permit-table">
+                    <div class="permit-row permit-head">
+                      <span class="col-id"></span>
+                      <span class="col-name"></span>
+                      <span class="col-status"></span>
+                      <span class="col-action"></span>
+                    </div>
+                    <div class="permit-row">
+                      <span class="col-id"></span>
+                      <span class="col-name"></span>
+                      <span class="col-status approved"></span>
+                      <span class="col-action"></span>
+                    </div>
+                    <div class="permit-row">
+                      <span class="col-id"></span>
+                      <span class="col-name"></span>
+                      <span class="col-status pending"></span>
+                      <span class="col-action"></span>
+                    </div>
+                    <div class="permit-row">
+                      <span class="col-id"></span>
+                      <span class="col-name"></span>
+                      <span class="col-status approved"></span>
+                      <span class="col-action"></span>
+                    </div>
+                  </div>
+                </div>
+              } @else if ($index === 2) {
+                <!-- Index 2: AquaLuminus -->
+                <div class="dashboard">
+                  <div class="dashboard-top"><span></span><span></span><span></span></div>
                   <div class="dashboard-body">
                     <div class="dashboard-sidebar">
                       <div></div>
@@ -43,42 +85,15 @@
                       <div></div>
                       <div></div>
                     </div>
-
                     <div class="dashboard-content">
                       <div class="dashboard-heading"></div>
-
                       <div class="dashboard-stats">
                         <div></div>
                         <div></div>
                         <div></div>
                       </div>
-
                       <div class="dashboard-chart"></div>
                     </div>
-                  </div>
-                </div>
-              } @else {
-                <div class="medical-interface">
-                  <div class="medical-header"></div>
-
-                  <div class="medical-row">
-                    <span></span>
-                    <span></span>
-                  </div>
-
-                  <div class="medical-row">
-                    <span></span>
-                    <span></span>
-                  </div>
-
-                  <div class="medical-row">
-                    <span></span>
-                    <span></span>
-                  </div>
-
-                  <div class="medical-row">
-                    <span></span>
-                    <span></span>
                   </div>
                 </div>
               }
@@ -88,8 +103,8 @@
               </div>
             </div>
 
-            <!-- Information -->
-            <div class="project-content">
+            <!-- Information (ADDED REVERSE LAYOUT CLASS HERE) -->
+            <div class="project-content" [class.reverse-layout]="$index === 1">
               <div>
                 <span class="project-category">
                   {{ project.category }}
@@ -113,7 +128,12 @@
               </div>
 
               <div class="project-arrow">
-                <i class="bi bi-arrow-up-right"></i>
+                <i
+                  class="bi"
+                  [class.bi-arrow-up-right]="$index !== 1"
+                  [class.bi-arrow-up-left]="$index === 1"
+                >
+                </i>
               </div>
             </div>
           </a>
