@@ -345,6 +345,55 @@
 }
 
 /* =========================================================
+   SKELETON LOADING
+========================================================= */
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-card {
+  cursor: default;
+}
+
+.skeleton-card:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.skeleton-visual {
+  background: linear-gradient(90deg, #0c1213 25%, #161e20 37%, #0c1213 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+.skeleton-line {
+  display: block;
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #161e20 25%, #232d2f 37%, #161e20 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+.skeleton-category {
+  width: 35%;
+  height: 8px;
+  margin-bottom: 12px;
+}
+
+.skeleton-title {
+  width: 65%;
+  height: 20px;
+}
+
+/* =========================================================
    DETAIL PANEL (revealed beside the card on click)
 ========================================================= */
 
