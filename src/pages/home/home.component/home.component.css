@@ -3,7 +3,7 @@
 ========================================================= */
 
 .section {
-  padding: 120px 0;
+  padding: 78px 0;
 }
 
 .section-header {
@@ -16,12 +16,9 @@
 
 .section-number {
   display: block;
-
   margin-bottom: 12px;
-
   color: #43e4d0;
-
-  font-size: 11px;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: 2px;
 }
@@ -43,10 +40,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   color: #43e4d0;
-
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 1px;
 
@@ -63,8 +58,7 @@
 
 .section-label {
   color: #697476;
-
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 2px;
 }
@@ -91,6 +85,53 @@
 
   font-size: 16px;
   line-height: 1.8;
+}
+
+.tech-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  position: relative;
+  /* Adds a fade-out gradient to the left and right edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.tech-marquee-content {
+  display: inline-flex;
+  gap: 40px;
+  /* Change '20s' to speed up or slow down the scrolling */
+  animation: scroll-left 20s linear infinite;
+}
+
+.tech-logo {
+  height: 22px;
+  width: auto;
+  /* Removed the grayscale filter so colors show by default */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-logo:hover {
+  /* Keeps the interactive pop effect without changing colors */
+  transform: scale(1.1);
+}
+
+/* Pauses the animation if the user hovers over the logos */
+.tech-marquee-container:hover .tech-marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Shifts exactly half the width (plus half the gap) to loop perfectly */
+    transform: translateX(calc(-50% - 20px));
+  }
 }
 
 /* =========================================================
@@ -147,7 +188,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 2px;
   color: #697476;
@@ -359,23 +400,17 @@
 
 .skills-grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .skill-card {
   min-height: 90px;
-
   display: flex;
   align-items: center;
   gap: 25px;
-
   padding: 20px;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
   transition: background 0.25s ease;
 }
 
@@ -389,16 +424,15 @@
 
 .skill-index {
   color: #43e4d0;
-
-  font-size: 9px;
+  font-size: 15px;
   font-weight: 800;
 }
 
 .skill-name {
   flex: 1;
-
   font-size: 18px;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .skill-card i {
@@ -409,9 +443,12 @@
    EXPERIENCE
 ========================================================= */
 
+/* =========================================================
+   EXPERIENCE TIMELINE
+========================================================= */
+
 .experience-heading {
   max-width: 250px;
-
   font-size: clamp(38px, 5vw, 58px);
   line-height: 0.95;
   font-weight: 800;
@@ -422,59 +459,100 @@
   color: #777f81;
 }
 
-.experience-item {
+.timeline-wrapper {
   position: relative;
-
-  display: grid;
-  grid-template-columns: 150px 1fr 30px;
-
-  gap: 30px;
-
-  padding: 30px 0;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  /* Creates the continuous vertical timeline line */
+  /* border-left: 2px solid rgba(67, 228, 208, 0.2); */
+  border-left: 2px solid #777f81;
+  margin-left: 10px;
+  padding-left: 30px;
 }
 
-.experience-item:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.experience-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 180px 1fr 30px;
+  gap: 30px;
+  padding: 20px 0 40px 0;
+}
+
+/* Glowing dot on the timeline */
+.timeline-dot {
+  position: absolute;
+  left: -37px; /* Aligns dot precisely onto the 2px border line */
+  top: 28px;
+  width: 12px;
+  height: 12px;
+  background: #070b0c;
+  border: 2px solid #43e4d0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(67, 228, 208, 0.5);
 }
 
 .experience-year {
-  color: #687375;
-
+  color: #070b0c;
   font-size: 11px;
+  font-weight: 700;
   line-height: 1.5;
+  letter-spacing: 1px;
 }
 
 .experience-content h3 {
   margin: 0;
-
   font-size: 22px;
   font-weight: 700;
+  color: #fff;
 }
 
 .experience-content h4 {
   margin: 5px 0 15px;
-
-  color: #43e4d0;
-
+  color: #818c8e;
   font-size: 12px;
   font-weight: 700;
 }
 
 .experience-content p {
   max-width: 600px;
-
   margin: 0;
-
   color: #7d888a;
-
   font-size: 13px;
   line-height: 1.7;
 }
 
 .experience-arrow {
   color: #43e4d0;
+  align-self: flex-start;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 575px) {
+  .timeline-wrapper {
+    padding-left: 20px;
+    margin-left: 5px;
+  }
+
+  .timeline-dot {
+    left: -27px;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr 20px;
+    gap: 10px;
+  }
+
+  .experience-year {
+    grid-column: 1 / -1;
+    margin-bottom: -5px;
+  }
+
+  .experience-content {
+    grid-column: 1;
+  }
+
+  .experience-arrow {
+    grid-column: 2;
+    grid-row: 2;
+  }
 }
 
 /* =========================================================
