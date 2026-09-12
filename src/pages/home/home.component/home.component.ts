@@ -86,5 +86,19 @@ export class HomeComponent {
       description:
         'Worked on MACEA, a multi-stage permit application and management platform built with Angular, TypeScript, PrimeNG, and ngx-permissions, developing data tables, audit logging, and document download features.',
     },
+    {
+      year: 'April 2025 — July 2025',
+      role: 'Project Manager (PM-JI Reservify Capstone Project)',
+      company: 'National University - Fairview',
+      description:
+        'PM-JI Reservify is a web-based reservation and scheduling management system designed to digitize and streamline the booking process for PM-JI. The system provides users with a convenient way to view availability and submit reservations while giving administrators centralized tools to manage bookings and prevent scheduling conflicts.',
+    },
+    {
+      year: 'August 2025 — October 2025',
+      role: 'Project Manager / Frontend Developer (AquaLuminus Capstone Project)',
+      company: 'National University - Fairview',
+      description:
+        'AquaLuminus is a mobile water filtration monitoring and management system designed to support the monitoring of UV-based water purification processes. The system provides users with a centralized dashboard for viewing filtration-related information, monitoring system status, and managing water purification data.',
+    },
   ];
 }

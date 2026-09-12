@@ -501,7 +501,7 @@
   margin: 0;
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: #070b0c;
 }
 
 .experience-content h4 {
@@ -561,30 +561,34 @@
 
 .contact-section {
   padding: 100px 0;
-
   background: radial-gradient(circle at 50% 50%, rgba(140, 103, 255, 0.12), transparent 45%);
 }
 
 .contact-box {
   padding: 70px 30px;
-
   text-align: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
 
-  background: rgba(12, 18, 19, 0.7);
+  /* 1. Subtle aqua-tinted border to match your theme */
+  border: 1px solid rgba(67, 228, 208, 0.15);
+
+  /* 2. Deep slate-to-black gradient */
+  background: linear-gradient(145deg, #11191a 0%, #06090a 100%);
+
+  /* 3. Soft drop shadow and a crisp inner top-highlight */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .contact-box h2 {
   max-width: 800px;
-
   margin: 0 auto 20px;
-
   font-size: clamp(45px, 7vw, 85px);
   line-height: 0.9;
   font-weight: 800;
   letter-spacing: -4px;
+  color: #fff;
 }
 
 .contact-box h2 span {
@@ -593,10 +597,8 @@
 
 .contact-box p {
   margin-bottom: 30px;
-
   color: #7e898b;
-
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .contact-box .primary-button {
