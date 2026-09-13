@@ -5,6 +5,7 @@ import { NavbarComponent } from '../../../components/navbar.component/navbar.com
 import { FeaturedProjectsComponent } from '../featured-projects.component/featured-projects.component';
 import { techLogo } from '../../../models/techlogo';
 import { experience } from '../../../models/experience';
+import { Skill } from '../../../models/skill';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ import { experience } from '../../../models/experience';
 export class HomeComponent {
   private http = inject(HttpClient);
 
-  skills = toSignal(this.http.get<string[]>('/data/skills.json'));
+  skills = toSignal(this.http.get<Skill[]>('/data/skills.json'));
   techLogos = toSignal(this.http.get<techLogo[]>('/data/tech-logos.json'));
   experiences = toSignal(this.http.get<experience[]>('/data/experiences.json'));
 }

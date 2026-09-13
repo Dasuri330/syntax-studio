@@ -150,18 +150,18 @@
     </div>
 
     <div class="skills-grid">
-      @for (skill of skills() ?? []; track skill) {
-        <div class="skill-card">
+      @for (skill of skills() ?? []; track skill.name) {
+        <a [href]="skill.url" target="_blank" rel="noopener noreferrer" class="skill-card">
           <span class="skill-index">
             {{ ($index + 1).toString().padStart(2, '0') }}
           </span>
 
           <span class="skill-name">
-            {{ skill }}
+            {{ skill.name }}
           </span>
 
           <i class="bi bi-arrow-up-right"></i>
-        </div>
+        </a>
       }
     </div>
   </div>
