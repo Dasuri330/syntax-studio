@@ -2,10 +2,10 @@
   display: block;
 }
 
-.featured-section {
-  padding: 78px 0;
+.all-projects-section {
+  padding: 68px 0 100px;
   background: #070b0c;
-  scroll-margin-top: 90px;
+  min-height: 100vh;
 }
 
 .section-heading {
@@ -37,20 +37,9 @@
   color: #6e7779;
 }
 
-.view-all {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #43e4d0;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-.view-all:hover {
-  color: #ffffff;
-}
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 991px) {
   .section-heading {
@@ -61,8 +50,8 @@
 }
 
 @media (max-width: 575px) {
-  .featured-section {
-    padding: 80px 0;
+  .all-projects-section {
+    padding: 100px 0 70px;
   }
 
   .section-heading h2 {

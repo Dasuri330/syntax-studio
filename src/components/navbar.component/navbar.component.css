@@ -1,10 +1,10 @@
 :host {
-  display: block;
+  display: contents;
 }
 
 .portfolio-navbar {
-  position: sticky;
-  top: 0;
+  position: sticky !important;
+  top: 0 !important;
   width: 100%;
   z-index: 1000;
   padding: 9px 0;
@@ -17,12 +17,9 @@
 
 .portfolio-logo {
   color: #f4f6f6;
-
   font-size: 18px;
   font-weight: 800;
-
   letter-spacing: -0.5px;
-
   text-decoration: none;
 }
 
