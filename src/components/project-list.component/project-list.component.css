@@ -1,0 +1,701 @@
+:host {
+  display: block;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: #0c1213;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(67, 228, 208, 0.3);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid #43e4d0;
+  outline-offset: 3px;
+}
+
+.project-card.is-active {
+  border-color: rgba(67, 228, 208, 0.55);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+.project-number {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  color: #43e4d0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   PROJECT VISUAL
+========================================================= */
+
+.project-visual {
+  position: relative;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.aqua-visual {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.15), transparent 45%), #0a1011;
+}
+
+.cgh-visual {
+  height: 290px;
+  background: radial-gradient(circle at 70% 30%, rgba(137, 95, 255, 0.2), transparent 45%), #0a0e10;
+}
+
+/* =========================================================
+   AQUA DASHBOARD
+========================================================= */
+
+.dashboard {
+  width: 72%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: #11191a;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  transform: perspective(1000px) rotateY(-8deg) rotateX(2deg);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .dashboard {
+  transform: perspective(1000px) rotateY(-3deg) rotateX(1deg) scale(1.02);
+}
+
+.dashboard-top {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dashboard-top span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #596264;
+}
+
+.dashboard-body {
+  display: flex;
+  height: 220px;
+}
+
+.dashboard-sidebar {
+  width: 18%;
+  padding: 15px 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dashboard-sidebar div {
+  width: 70%;
+  height: 5px;
+  margin: 0 auto 17px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-sidebar div:first-child {
+  background: #43e4d0;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 18px;
+}
+
+.dashboard-heading {
+  width: 35%;
+  height: 8px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background: #43e4d0;
+}
+
+.dashboard-stats {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-stats div {
+  flex: 1;
+  height: 45px;
+  border-radius: 5px;
+  background: #1b2526;
+}
+
+.dashboard-chart {
+  height: 85px;
+  margin-top: 15px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(67, 228, 208, 0.12), rgba(125, 85, 255, 0.08));
+}
+
+/* =========================================================
+   CGH INTERFACE
+========================================================= */
+
+.medical-interface {
+  width: 62%;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: #111719;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform: rotate(4deg);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .medical-interface {
+  transform: rotate(1deg) scale(1.02);
+}
+.medical-header {
+  width: 45%;
+  height: 8px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background: #8c67ff;
+}
+
+.medical-row {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  background: #1a2325;
+}
+
+.medical-row span:first-child {
+  width: 35%;
+}
+
+.medical-row span:last-child {
+  width: 20%;
+}
+
+.medical-row span {
+  height: 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   GENERIC FALLBACK VISUAL (for projects without a custom illustration)
+========================================================= */
+
+.generic-visual {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.12), transparent 45%), #0a0e10;
+}
+
+.generic-window {
+  width: 68%;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: #111719;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .generic-window {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.generic-window-top {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+
+.generic-window-top span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #596264;
+}
+
+.generic-line {
+  height: 6px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.generic-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: rgba(67, 228, 208, 0.1);
+  color: #43e4d0;
+  font-size: 18px;
+}
+
+/* =========================================================
+   PROJECT CAPTION (compact, always visible on the card)
+========================================================= */
+
+.project-caption {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 28px 26px;
+}
+
+.project-caption.reverse-caption {
+  flex-direction: row-reverse;
+}
+
+.project-caption.reverse-caption .project-caption-text {
+  text-align: right;
+}
+
+.project-category {
+  color: #687476;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.project-caption h3 {
+  margin: 10px 0 0;
+  color: #f3f5f5;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.project-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #7d898b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: color 0.25s ease;
+}
+
+.project-card:hover .project-cta,
+.project-card.is-active .project-cta {
+  color: #43e4d0;
+}
+
+.project-cta-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: #43e4d0;
+  transition: all 0.25s ease;
+}
+
+.project-card:hover .project-cta-icon {
+  background: #43e4d0;
+  color: #07100f;
+  transform: rotate(45deg);
+}
+
+.project-card:hover .reverse-caption .project-cta-icon {
+  transform: rotate(-45deg);
+}
+
+.project-card.is-active .project-cta-icon {
+  background: #43e4d0;
+  color: #07100f;
+}
+
+/* =========================================================
+   SKELETON LOADING
+========================================================= */
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-card {
+  cursor: default;
+}
+
+.skeleton-card:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.skeleton-visual {
+  background: linear-gradient(90deg, #0c1213 25%, #161e20 37%, #0c1213 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+.skeleton-line {
+  display: block;
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #161e20 25%, #232d2f 37%, #161e20 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+.skeleton-category {
+  width: 35%;
+  height: 8px;
+  margin-bottom: 12px;
+}
+
+.skeleton-title {
+  width: 65%;
+  height: 20px;
+}
+
+/* =========================================================
+   DETAIL PANEL (revealed beside the card on click)
+========================================================= */
+
+.project-detail-panel {
+  position: relative;
+  height: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: #0c1213;
+}
+
+/* Layer 1: project image (default state) */
+.detail-image {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  transform: scale(1);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.08), transparent 45%), #0a0e10;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.detail-image.is-hidden {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.detail-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 28px;
+  background: radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.1), transparent 45%), #0a0e10;
+}
+
+/* Layer 2: description (shown when the card is toggled open) */
+.detail-inner {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  padding: 28px;
+  opacity: 0;
+  transform: translateX(12px);
+  transition:
+    opacity 0.35s ease 0.05s,
+    transform 0.35s ease 0.05s;
+  pointer-events: none;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+}
+
+.detail-inner::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge (Chromium) */
+}
+
+.detail-inner.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.detail-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.detail-placeholder {
+  margin: 0;
+  color: #52605f;
+  font-size: 13px;
+  text-align: center;
+}
+
+.detail-inner h3 {
+  margin: 10px 0 14px;
+  color: #f3f5f5;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.detail-inner p {
+  margin: 0 0 18px;
+  color: #7d898b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+
+.technology-list span {
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  color: #7d898b;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #43e4d0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   MACEA PERMIT VISUAL
+========================================================= */
+
+.parking-visual {
+  background:
+    radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.15), transparent 45%), #0a0e10;
+}
+
+.permit-interface {
+  width: 72%;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: #111719;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform: rotate(-3deg);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .permit-interface {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.permit-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.permit-filter {
+  width: 70px;
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.permit-filter.short {
+  width: 40px;
+}
+
+.permit-badge {
+  margin-left: auto;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: rgba(67, 228, 208, 0.12);
+  color: #43e4d0;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.permit-table {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.permit-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.permit-row:last-child {
+  border-bottom: none;
+}
+
+.permit-row.permit-head {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.col-id {
+  width: 15%;
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.col-name {
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.col-status {
+  width: 18%;
+  height: 14px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.col-status.approved {
+  background: rgba(67, 228, 208, 0.15);
+  border: 1px solid rgba(67, 228, 208, 0.4);
+}
+
+.col-status.pending {
+  background: rgba(255, 200, 87, 0.12);
+  border: 1px solid rgba(255, 200, 87, 0.35);
+}
+
+.col-action {
+  width: 8%;
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.permit-row.permit-head .col-id,
+.permit-row.permit-head .col-name,
+.permit-row.permit-head .col-status,
+.permit-row.permit-head .col-action {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+  .project-visual {
+    height: 280px;
+  }
+
+  .project-detail-panel {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .project-caption {
+    padding: 20px 22px 24px;
+  }
+
+  .project-caption h3 {
+    font-size: 20px;
+  }
+
+  .project-visual {
+    height: 230px;
+  }
+
+  .dashboard {
+    width: 85%;
+  }
+
+  .medical-interface {
+    width: 75%;
+  }
+
+  .generic-window {
+    width: 80%;
+  }
+}
