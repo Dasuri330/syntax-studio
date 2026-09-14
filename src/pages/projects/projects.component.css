@@ -2,23 +2,60 @@
   display: block;
 }
 
+/* =========================================================
+   ALL PROJECTS SECTION
+========================================================= */
+
 .all-projects-section {
-  padding: 68px 0 100px;
-  background: #070b0c;
+  position: relative;
   min-height: 100vh;
+  padding: 68px 0 100px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 8%, rgba(0, 177, 171, 0.16), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 8% 50%, rgba(25, 112, 120, 0.1), transparent 65%),
+    radial-gradient(ellipse 65% 55% at 50% 100%, rgba(18, 70, 74, 0.12), transparent 70%),
+    linear-gradient(135deg, #10282a 0%, #0c2022 45%, #081719 100%);
 }
 
+/* =========================================================
+   SUBTLE BACKGROUND DETAIL
+========================================================= */
+
+.all-projects-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: radial-gradient(circle at 50% 0%, rgba(67, 228, 208, 0.04), transparent 38%);
+
+  opacity: 1;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
 .section-heading {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+
   margin-bottom: 45px;
 }
 
 .section-number {
   display: block;
+
   margin-bottom: 12px;
+
   color: #43e4d0;
+
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -26,7 +63,9 @@
 
 .section-heading h2 {
   margin: 0;
-  color: #f3f5f5;
+
+  color: #f3f7f6;
+
   font-size: clamp(40px, 5vw, 65px);
   line-height: 0.9;
   font-weight: 800;
@@ -34,7 +73,7 @@
 }
 
 .section-heading h2 span {
-  color: #6e7779;
+  color: #8aa5a7;
 }
 
 /* =========================================================
