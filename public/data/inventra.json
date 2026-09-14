@@ -1,0 +1,108 @@
+{
+  "slug": "inventra",
+  "overview": {
+    "description": "Inventra is a web-based Inventory & Warehouse Management System (IWMS) designed to centralize inventory tracking, product management, stock movements, and warehouse monitoring. The system is designed to support administrators in managing products, users, and inventory reports, while providing warehouse staff with tools to monitor products and record stock-in and stock-out transactions. The project is currently in the frontend development phase, with the UI/UX completed in Figma and the React frontend being implemented using static JSON data.",
+    "details": {
+      "client": "Personal",
+      "timeline": "Ongoing Development",
+      "role": "UI/UX Designer & Frontend Developer",
+      "company": "Personal",
+      "type": "Web Application (IWMS)"
+    }
+  },
+  "keyFeatures": [
+    {
+      "title": "Inventory Dashboard",
+      "description": "Provides an overview of inventory statistics, stock levels, low-stock items, and recent inventory activity through a centralized dashboard.",
+      "icon": "bi-speedometer2"
+    },
+    {
+      "title": "Product Management",
+      "description": "Allows administrators and authorized users to manage product information, including product details, SKUs, and inventory-related data.",
+      "icon": "bi-box-seam"
+    },
+    {
+      "title": "Stock-In & Stock-Out",
+      "description": "Supports recording incoming and outgoing inventory transactions to maintain accurate stock quantities and provide visibility into inventory changes.",
+      "icon": "bi-arrow-left-right"
+    },
+    {
+      "title": "Stock Movement History",
+      "description": "Maintains a record of stock-in and stock-out activities, allowing users to review previous inventory movements and monitor changes over time.",
+      "icon": "bi-clock-history"
+    },
+    {
+      "title": "Low-Stock Monitoring",
+      "description": "Highlights products with low inventory levels to help warehouse staff identify items that may require replenishment.",
+      "icon": "bi-exclamation-triangle"
+    },
+    {
+      "title": "Inventory Valuation Reports",
+      "description": "Provides inventory valuation information to help administrators monitor the overall value of stored products.",
+      "icon": "bi-bar-chart-line"
+    },
+    {
+      "title": "SKU & Barcode Lookup",
+      "description": "Supports product lookup using SKU and barcode information to make locating and identifying inventory items more efficient.",
+      "icon": "bi-upc-scan"
+    },
+    {
+      "title": "User & Role Management",
+      "description": "Provides user and role management capabilities with role-based access control for administrators and warehouse staff.",
+      "icon": "bi-people"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/inventra.jpg",
+      "title": "Inventra",
+      "description": "Inventory and warehouse management dashboard interface."
+    }
+  ],
+  "techStack": [
+    {
+      "name": "React",
+      "category": "Frontend"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Language"
+    },
+    {
+      "name": "Vite",
+      "category": "Build Tool"
+    },
+    {
+      "name": "CSS",
+      "category": "Styling"
+    },
+    {
+      "name": "Lucide React",
+      "category": "Icons"
+    },
+    {
+      "name": "JSON",
+      "category": "Mock Data"
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend"
+    },
+    {
+      "name": "Express.js",
+      "category": "API"
+    },
+    {
+      "name": "Supabase",
+      "category": "Database"
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Database"
+    }
+  ],
+  "cta": {
+    "title": "Interested in working together?",
+    "description": "Let's build thoughtful, reliable, and user-focused digital experiences."
+  }
+}

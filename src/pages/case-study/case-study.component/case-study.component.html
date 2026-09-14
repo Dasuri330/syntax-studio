@@ -1,0 +1,359 @@
+<app-navbar></app-navbar>
+
+<main class="case-study-page">
+  @if (loading()) {
+    <!-- ========================================
+         LOADING STATE
+    ========================================= -->
+
+    <section class="case-study-hero">
+      <div class="container">
+        <p class="loading-text">Loading project...</p>
+      </div>
+    </section>
+  } @else if (notFound()) {
+    <!-- ========================================
+         NOT FOUND STATE
+    ========================================= -->
+
+    <section class="case-study-hero">
+      <div class="container">
+        <a routerLink="/projects" class="back-link">
+          <i class="bi bi-arrow-left"></i>
+          Back to projects
+        </a>
+
+        <h1>PROJECT NOT FOUND.</h1>
+
+        <p class="hero-description">The project you're looking for doesn't exist.</p>
+      </div>
+    </section>
+  } @else if (project(); as currentProject) {
+    <!-- ========================================
+         01. HERO
+    ========================================= -->
+
+    <section class="case-study-hero">
+      <div class="container">
+        <!-- BACK TO PROJECTS -->
+
+        <a routerLink="/projects" class="back-link">
+          <i class="bi bi-arrow-left"></i>
+          Back to projects
+        </a>
+
+        <div class="hero-grid">
+          <!-- LEFT: PROJECT INFORMATION -->
+
+          <div class="hero-content">
+            <span class="project-category">
+              {{ currentProject.category }}
+            </span>
+
+            <h1>
+              {{ currentProject.title }}
+            </h1>
+
+            <p class="hero-description">
+              {{ currentProject.description }}
+            </p>
+
+            <!-- TECHNOLOGIES -->
+
+            <div class="technology-list">
+              @for (technology of currentProject.technologies; track technology) {
+                <span class="technology-tag">
+                  {{ technology }}
+                </span>
+              }
+            </div>
+          </div>
+
+          <!-- RIGHT: PROJECT IMAGE -->
+
+          <div class="hero-visual">
+            @if (currentProject.image) {
+              <div class="hero-image-wrapper">
+                <img
+                  [src]="currentProject.image"
+                  [alt]="currentProject.title + ' project preview'"
+                  class="hero-image"
+                />
+              </div>
+            } @else {
+              <div class="hero-image-placeholder">
+                <i class="bi bi-window-stack"></i>
+
+                <span> Project Preview </span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    @if (caseStudy(); as study) {
+      <!-- ========================================
+           01. PROJECT OVERVIEW
+      ========================================= -->
+
+      <section class="project-overview">
+        <div class="container">
+          <div class="overview-grid">
+            <!-- LEFT: OVERVIEW -->
+
+            <div class="overview-content">
+              <div class="section-heading">
+                <span class="section-number"> 01 / </span>
+
+                <h2>PROJECT OVERVIEW</h2>
+              </div>
+
+              <!-- OVERVIEW DESCRIPTION -->
+
+              <p>
+                {{ study.overview.description }}
+              </p>
+
+              <!-- OVERVIEW HIGHLIGHTS -->
+
+              <div class="overview-highlights">
+                @for (feature of study.keyFeatures; track feature.title) {
+                  <div class="overview-highlight">
+                    <div class="highlight-icon">
+                      <i class="bi" [class]="feature.icon"></i>
+                    </div>
+
+                    <div>
+                      <strong>
+                        {{ feature.title }}
+                      </strong>
+
+                      <span>
+                        {{ feature.description }}
+                      </span>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+
+            <!-- RIGHT: PROJECT DETAILS -->
+
+            <aside class="project-details">
+              <span class="details-label"> PROJECT DETAILS </span>
+
+              <!-- CLIENT -->
+
+              <div class="detail-row">
+                <div class="detail-icon">
+                  <i class="bi bi-building"></i>
+                </div>
+
+                <div class="detail-info">
+                  <span class="detail-name"> Client </span>
+
+                  <span class="detail-value">
+                    {{ study.overview.details.client }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- TIMELINE -->
+
+              <div class="detail-row">
+                <div class="detail-icon">
+                  <i class="bi bi-calendar3"></i>
+                </div>
+
+                <div class="detail-info">
+                  <span class="detail-name"> Timeline </span>
+
+                  <span class="detail-value">
+                    {{ study.overview.details.timeline }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- ROLE -->
+
+              <div class="detail-row">
+                <div class="detail-icon">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+
+                <div class="detail-info">
+                  <span class="detail-name"> Role </span>
+
+                  <span class="detail-value">
+                    {{ study.overview.details.role }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- COMPANY -->
+
+              <div class="detail-row">
+                <div class="detail-icon">
+                  <i class="bi bi-buildings"></i>
+                </div>
+
+                <div class="detail-info">
+                  <span class="detail-name"> Company </span>
+
+                  <span class="detail-value">
+                    {{ study.overview.details.company }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- TYPE -->
+
+              <div class="detail-row">
+                <div class="detail-icon">
+                  <i class="bi bi-window"></i>
+                </div>
+
+                <div class="detail-info">
+                  <span class="detail-name"> Type </span>
+
+                  <span class="detail-value">
+                    {{ study.overview.details.type }}
+                  </span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           02. KEY FEATURES
+      ========================================= -->
+
+      <section class="key-features">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-number"> 02 / </span>
+
+            <h2>KEY FEATURES</h2>
+          </div>
+
+          <div class="features-grid">
+            @for (feature of study.keyFeatures; track feature.title) {
+              <article class="feature-card">
+                <!-- ICON -->
+
+                <div class="feature-icon">
+                  <i class="bi" [class]="feature.icon"></i>
+                </div>
+
+                <!-- FEATURE NUMBER -->
+
+                <span class="feature-number">
+                  {{ ($index + 1).toString().padStart(2, '0') }}
+                </span>
+
+                <!-- TITLE -->
+
+                <h3>
+                  {{ feature.title }}
+                </h3>
+
+                <!-- DESCRIPTION -->
+
+                <p>
+                  {{ feature.description }}
+                </p>
+              </article>
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           03. PROJECT GALLERY
+      ========================================= -->
+
+      <section class="gallery-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-number"> 03 / </span>
+
+            <h2>PROJECT GALLERY</h2>
+          </div>
+
+          <div class="gallery-grid">
+            @for (item of study.gallery; track item.image) {
+              <figure class="gallery-item">
+                <div class="gallery-image-wrapper">
+                  <img [src]="item.image" [alt]="item.title" class="gallery-image" />
+                </div>
+
+                <figcaption>
+                  <strong>
+                    {{ item.title }}
+                  </strong>
+
+                  <span>
+                    {{ item.description }}
+                  </span>
+                </figcaption>
+              </figure>
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           04. TECH STACK
+      ========================================= -->
+
+      <section class="tech-stack-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-number"> 04 / </span>
+
+            <h2>TECH STACK</h2>
+          </div>
+
+          <div class="tech-stack-list">
+            @for (technology of study.techStack; track technology.name) {
+              <div class="tech-item">
+                <span class="tech-name">
+                  {{ technology.name }}
+                </span>
+
+                <span class="tech-category">
+                  {{ technology.category }}
+                </span>
+              </div>
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           LET'S TALK CTA
+      ========================================= -->
+
+      <section class="case-study-cta">
+        <div class="container">
+          <div class="cta-content">
+            <span class="cta-label"> HAVE A PROJECT IN MIND? </span>
+            <h2>
+              {{ study.cta.title }}
+            </h2>
+            <p>
+              {{ study.cta.description }}
+            </p>
+            <a routerLink="/" fragment="contact" class="cta-link">
+              LET'S TALK
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    }
+  }
+</main>

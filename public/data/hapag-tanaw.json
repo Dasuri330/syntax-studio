@@ -1,0 +1,94 @@
+{
+  "slug": "hapag-tanaw",
+  "overview": {
+    "description": "Hapag Tanaw is a web-based restaurant reservation system designed to guide customers through the complete booking process, from selecting a schedule and food package to payment and confirmation. The platform uses a multi-step reservation flow to make the booking experience clear and organized, while providing public pages for visitors and secure reservation features for registered customers.",
+    "details": {
+      "client": "Personal / Academic Project",
+      "timeline": "Project Development",
+      "role": "Frontend Developer",
+      "company": "Personal Project",
+      "type": "Web Application"
+    }
+  },
+  "keyFeatures": [
+    {
+      "title": "Multi-Step Reservation Flow",
+      "description": "Guides customers through a structured booking process using a visual stepper: Reserve, Food Package, Payment, and Confirm.",
+      "icon": "bi-list-check"
+    },
+    {
+      "title": "Authentication & Route Protection",
+      "description": "Provides customer sign-up and login functionality with storage-based sessions and route guards protecting secure reservation pages.",
+      "icon": "bi-person-lock"
+    },
+    {
+      "title": "Smart Reservation Validation",
+      "description": "Uses reactive forms and custom validation for customer details, Philippine mobile numbers, reservation dates, and valid restaurant time ranges.",
+      "icon": "bi-calendar-check"
+    },
+    {
+      "title": "Food Package Selection",
+      "description": "Allows customers to browse and select food packages and à la carte items loaded dynamically from local JSON data sources.",
+      "icon": "bi-egg-fried"
+    },
+    {
+      "title": "Reservation Summary & Editing",
+      "description": "Provides a confirmation step where customers can review and edit their reservation details before finalizing the booking.",
+      "icon": "bi-pencil-square"
+    },
+    {
+      "title": "Custom Payment & Modal Experience",
+      "description": "Provides simulated GCash and Maya payment options together with reusable alert, warning, success, invalid-package, and confirmation modals.",
+      "icon": "bi-credit-card"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/hapag-tanaw.jpg",
+      "title": "Hapag Tanaw",
+      "description": "Restaurant reservation interface and booking workflow."
+    }
+  ],
+  "techStack": [
+    {
+      "name": "Angular",
+      "category": "Frontend"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Language"
+    },
+    {
+      "name": "RxJS",
+      "category": "State & Events"
+    },
+    {
+      "name": "Reactive Forms",
+      "category": "Form Handling"
+    },
+    {
+      "name": "Angular Router",
+      "category": "Routing"
+    },
+    {
+      "name": "Bootstrap 5",
+      "category": "UI Framework"
+    },
+    {
+      "name": "Font Awesome",
+      "category": "Icons"
+    },
+    {
+      "name": "JSON",
+      "category": "Data Source"
+    },
+    {
+      "name": "LocalStorage / SessionStorage",
+      "category": "Persistence"
+    }
+  ],
+  "cta": {
+    "title": "Interested in working together?",
+    "description": "Let's build thoughtful, reliable, and user-focused digital experiences."
+  }
+}
