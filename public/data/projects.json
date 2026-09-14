@@ -60,9 +60,9 @@
   {
     "number": "05",
     "category": "FULLSTACK / INFORMATION MANAGEMENT SYSTEM",
-    "title": "MESIMS (Meridian Elementary School Information Management System)",
+    "title": "MESIMS",
     "slug": "mesims",
-    "description": "MESIMS is a full-stack school information management system built as a capstone project for Meridian Elementary School, designed to digitize and streamline administrative and academic workflows across six distinct user roles: Administrator, Principal, Registrar, Teacher, Parent, and Student. The system is built with compliance at its core, adhering to Philippine DepEd Order No. 8, s. 2015, including support for LRN (Learner Reference Number) tracking, PRC license verification for teachers, and the standard DepEd grading structure.",
+    "description": "MESIMS (Meridian Elementary School Information Management System) is a full-stack school information management system built as a capstone project for Meridian Elementary School, designed to digitize and streamline administrative and academic workflows across six distinct user roles: Administrator, Principal, Registrar, Teacher, Parent, and Student. The system is built with compliance at its core, adhering to Philippine DepEd Order No. 8, s. 2015, including support for LRN (Learner Reference Number) tracking, PRC license verification for teachers, and the standard DepEd grading structure.",
     "technologies": [
       "Angular",
       "Bootstrap",

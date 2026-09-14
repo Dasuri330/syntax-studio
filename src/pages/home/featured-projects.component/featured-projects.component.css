@@ -4,8 +4,12 @@
 
 .featured-section {
   padding: 78px 0;
-  background: #070b0c;
   scroll-margin-top: 90px;
+
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 10%, rgba(67, 228, 208, 0.1), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 10% 70%, rgba(32, 104, 108, 0.08), transparent 65%),
+    linear-gradient(135deg, #181e20 0%, #1b2527 50%, #142224 100%);
 }
 
 .section-heading {
@@ -18,7 +22,9 @@
 .section-number {
   display: block;
   margin-bottom: 12px;
+
   color: #43e4d0;
+
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -26,7 +32,9 @@
 
 .section-heading h2 {
   margin: 0;
+
   color: #f3f5f5;
+
   font-size: clamp(40px, 5vw, 65px);
   line-height: 0.9;
   font-weight: 800;
@@ -34,18 +42,22 @@
 }
 
 .section-heading h2 span {
-  color: #6e7779;
+  color: #8a999b;
 }
 
 .view-all {
   display: flex;
   align-items: center;
   gap: 8px;
+
   color: #43e4d0;
+
   font-size: 16px;
   font-weight: 800;
   letter-spacing: 1px;
   text-decoration: none;
+
+  transition: color 0.25s ease;
 }
 
 .view-all:hover {

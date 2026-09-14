@@ -395,7 +395,10 @@
 ========================================================= */
 
 .skills-section {
-  background: #070b0c;
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 10%, rgba(67, 228, 208, 0.1), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 10% 70%, rgba(32, 104, 108, 0.08), transparent 65%),
+    linear-gradient(135deg, #181e20 0%, #1b2527 50%, #142224 100%);
 }
 
 .skills-grid {
@@ -570,14 +573,11 @@
   padding: 70px 30px;
   text-align: center;
   border-radius: 24px;
-
-  /* 1. Subtle aqua-tinted border to match your theme */
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 10%, rgba(67, 228, 208, 0.1), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 10% 70%, rgba(32, 104, 108, 0.08), transparent 65%),
+    linear-gradient(135deg, #181e20 0%, #1b2527 50%, #142224 100%);
   border: 1px solid rgba(67, 228, 208, 0.15);
-
-  /* 2. Deep slate-to-black gradient */
-  background: linear-gradient(145deg, #11191a 0%, #06090a 100%);
-
-  /* 3. Soft drop shadow and a crisp inner top-highlight */
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
