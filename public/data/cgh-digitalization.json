@@ -1,0 +1,82 @@
+{
+  "slug": "cgh-digitalization",
+  "overview": {
+    "description": "CGH Digitalization is an Electronic Medical Record (EMR) web application designed to streamline patient care workflows and clinical operations.",
+    "details": {
+      "client": "Chinese General Hospital (CGH)",
+      "timeline": "March 2026 – September 2026",
+      "role": "Software Developer Trainee",
+      "company": "Exist Software Labs Inc.",
+      "type": "Web Application (EMR)"
+    }
+  },
+  "keyFeatures": [
+    {
+      "title": "Improved Patient Care",
+      "description": "Real-time clinical data such as vitals, neuro observations, and fall risk scores is available at the point of care instead of being buried in paper charts.",
+      "icon": "bi-heart-pulse"
+    },
+    {
+      "title": "Automated Documentation",
+      "description": "Digitized assessment checklists, fall scales, family medical history, and neurological observations replace manual paper entry.",
+      "icon": "bi-file-earmark-check"
+    },
+    {
+      "title": "Better Data Accessibility",
+      "description": "Centralized patient banners and sidebars surface important information such as height, weight, dietary needs, and frequency across relevant views.",
+      "icon": "bi-database-check"
+    },
+    {
+      "title": "Data Integrity & Safety",
+      "description": "Optimistic concurrency control helps prevent multiple staff members from silently overwriting updates to the same patient record.",
+      "icon": "bi-shield-check"
+    },
+    {
+      "title": "Role-Based Access",
+      "description": "Differentiated access supports workflows such as nurse full access and doctor view-only access on sensitive clinical forms.",
+      "icon": "bi-person-lock"
+    },
+    {
+      "title": "Consistency Across Modules",
+      "description": "Shared UI and UX patterns, including banner and section scaffolding, provide a consistent experience as new forms are added.",
+      "icon": "bi-grid-1x2"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/CGH Project.jpg",
+      "title": "CGH Digitalization",
+      "description": "EMR interface and clinical workflow."
+    }
+  ],
+  "techStack": [
+    {
+      "name": "AngularJS",
+      "category": "Frontend"
+    },
+    {
+      "name": "JavaScript",
+      "category": "Language"
+    },
+    {
+      "name": "SCSS",
+      "category": "Styling"
+    },
+    {
+      "name": "Bootstrap",
+      "category": "UI Framework"
+    },
+    {
+      "name": "RequireJS",
+      "category": "Module Loader"
+    },
+    {
+      "name": "Docker",
+      "category": "Development"
+    }
+  ],
+  "cta": {
+    "title": "Interested in working together?",
+    "description": "Let's build thoughtful, reliable, and user-focused digital experiences."
+  }
+}

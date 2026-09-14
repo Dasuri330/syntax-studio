@@ -19,6 +19,13 @@ export const routes: Routes = [
       import('../pages/projects/projects.component').then((m) => m.ProjectsComponent),
   },
   {
+    path: 'projects/:slug',
+    loadComponent: () =>
+      import('../pages/case-study/case-study.component/case-study.component').then(
+        (m) => m.CaseStudyComponent,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

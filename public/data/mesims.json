@@ -1,0 +1,102 @@
+{
+  "slug": "mesims",
+  "overview": {
+    "description": "MESIMS (Meridian Elementary School Information Management System) is a full-stack school information management system designed to digitize and centralize student, teacher, and administrative records. Built as a solo capstone project, the system is designed around six user roles and incorporates Philippine DepEd Order No. 8, s. 2015, including LRN tracking, PRC license verification for teachers, and the standard DepEd grading structure.",
+    "details": {
+      "client": "Personal",
+      "timeline": "Ongoing Development",
+      "role": "Full-Stack Developer",
+      "company": "Personal",
+      "type": "Web Application"
+    }
+  },
+  "keyFeatures": [
+    {
+      "title": "Role-Based Access Control",
+      "description": "Provides differentiated access for Administrator, Principal, Registrar, Teacher, Parent, and Student roles using JWT authentication and machine-readable role codes.",
+      "icon": "bi-person-lock"
+    },
+    {
+      "title": "Account Provisioning",
+      "description": "Allows administrators to create initial login credentials while users complete their own profiles after their first successful login.",
+      "icon": "bi-person-plus"
+    },
+    {
+      "title": "Teacher Profile Management",
+      "description": "Provides a guided profile completion flow covering personal information, PRC and DepEd credentials, supporting documents, and license validity status.",
+      "icon": "bi-person-vcard"
+    },
+    {
+      "title": "DepEd Compliance",
+      "description": "The system is designed around DepEd Order No. 8, s. 2015, incorporating LRN tracking, PRC license verification, and the standard DepEd grading structure.",
+      "icon": "bi-mortarboard"
+    },
+    {
+      "title": "Centralized School Records",
+      "description": "Uses a structured relational database to centralize school-related records and support administrative and academic information management.",
+      "icon": "bi-database"
+    },
+    {
+      "title": "Secure Authentication",
+      "description": "Implements JWT-based authentication with protected routes and role-aware access throughout the application.",
+      "icon": "bi-shield-check"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/mesims.jpg",
+      "title": "MESIMS",
+      "description": "School information management system interface."
+    }
+  ],
+  "techStack": [
+    {
+      "name": "Angular",
+      "category": "Frontend"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Language"
+    },
+    {
+      "name": "Bootstrap 5",
+      "category": "UI Framework"
+    },
+    {
+      "name": "ng-bootstrap",
+      "category": "UI Components"
+    },
+    {
+      "name": "PrimeNG",
+      "category": "UI Library"
+    },
+    {
+      "name": "FastAPI",
+      "category": "Backend"
+    },
+    {
+      "name": "SQLAlchemy",
+      "category": "ORM"
+    },
+    {
+      "name": "Pydantic",
+      "category": "Validation"
+    },
+    {
+      "name": "PyMySQL",
+      "category": "Database Driver"
+    },
+    {
+      "name": "MySQL",
+      "category": "Database"
+    },
+    {
+      "name": "JWT",
+      "category": "Authentication"
+    }
+  ],
+  "cta": {
+    "title": "Interested in working together?",
+    "description": "Let's build thoughtful, reliable, and user-focused digital experiences."
+  }
+}

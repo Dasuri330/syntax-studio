@@ -1,0 +1,78 @@
+{
+  "slug": "aqualuminus",
+  "overview": {
+    "description": "AquaLuminus is a mobile UV water filtration and monitoring system designed to provide real-time water quality information and system insights. The system connects water-quality and filtration-related monitoring data with a software interface, allowing users to view collected sensor readings, monitor the status of the filtration process, and better understand the condition of the water through an accessible monitoring dashboard.",
+    "details": {
+      "client": "Personal / Academic Project",
+      "timeline": "Capstone Project",
+      "role": "Software Developer",
+      "company": "Personal / Academic Project",
+      "type": "Mobile Water Filtration & Monitoring System"
+    }
+  },
+  "keyFeatures": [
+    {
+      "title": "Real-Time Water Quality Monitoring",
+      "description": "Displays collected water-quality sensor readings through the application, giving users accessible information about the current condition of the monitored water.",
+      "icon": "bi-droplet-half"
+    },
+    {
+      "title": "Water Quality Dashboard",
+      "description": "Presents water-quality information and monitoring data through a centralized dashboard designed to make changing readings easier to understand.",
+      "icon": "bi-bar-chart-line"
+    },
+    {
+      "title": "UV Filtration Monitoring",
+      "description": "Provides monitoring information related to the UV filtration process and helps users observe the operational status of the filtration system.",
+      "icon": "bi-lightbulb"
+    },
+    {
+      "title": "System Status & Insights",
+      "description": "Provides system-related information and operational insights to help users monitor the overall status of the filtration and monitoring components.",
+      "icon": "bi-activity"
+    },
+    {
+      "title": "Sensor Data Visualization",
+      "description": "Transforms collected sensor readings into understandable monitoring information within the application interface.",
+      "icon": "bi-graph-up"
+    },
+    {
+      "title": "Mobile-Friendly Interface",
+      "description": "Uses a responsive interface designed to make water-quality and filtration information accessible through a mobile-oriented monitoring experience.",
+      "icon": "bi-phone"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/aqualuminus.png",
+      "title": "AquaLuminus",
+      "description": "Mobile UV water filtration monitoring system interface."
+    }
+  ],
+  "techStack": [
+    {
+      "name": "React.js",
+      "category": "Frontend"
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Styling"
+    },
+    {
+      "name": "PHP",
+      "category": "Backend"
+    },
+    {
+      "name": "MySQL",
+      "category": "Database"
+    },
+    {
+      "name": "REST API",
+      "category": "API"
+    }
+  ],
+  "cta": {
+    "title": "Interested in working together?",
+    "description": "Let's build thoughtful, reliable, and user-focused digital experiences."
+  }
+}

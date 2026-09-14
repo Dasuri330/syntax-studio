@@ -313,7 +313,7 @@
                 }
               </div>
 
-              <a routerLink="/projects" class="detail-link">
+              <a [routerLink]="['/projects', project.slug]" class="detail-link">
                 View case study
                 <i class="bi bi-arrow-up-right"></i>
               </a>

@@ -1,0 +1,86 @@
+{
+  "slug": "macea-permit-processing",
+  "overview": {
+    "description": "MACEA Permits Processing System is a web-based platform that digitizes the end-to-end lifecycle of permit applications, from submission and billing assessment to accounting review, payment, and final permit release. The system centralizes permit processing workflows and allows applicants and accounting staff to track application status through a single platform.",
+    "details": {
+      "client": "Makati Central Estate Association (MACEA)",
+      "timeline": "December 2025 – March 2026",
+      "role": "Software Developer Trainee",
+      "company": "Exist Software Labs Inc.",
+      "type": "Web Application"
+    }
+  },
+  "keyFeatures": [
+    {
+      "title": "End-to-End Permit Tracking",
+      "description": "Supports the permit lifecycle from application submission and billing assessment through approval, payment, and final permit release.",
+      "icon": "bi-file-earmark-check"
+    },
+    {
+      "title": "Role-Based Billing Workflow",
+      "description": "Provides differentiated workflows for Accounting staff and Accounting Supervisors, including billing assessment creation, updates, review, approval, and return actions.",
+      "icon": "bi-person-check"
+    },
+    {
+      "title": "Advanced Filtering",
+      "description": "Provides filtering capabilities for Permit ID, Permit Classification, Activity Type, date range, status, and assignee across permit and billing lists.",
+      "icon": "bi-funnel"
+    },
+    {
+      "title": "E-Signature & Profile Management",
+      "description": "Added e-signature file upload and display functionality to user profiles together with improved profile field validation.",
+      "icon": "bi-pen"
+    },
+    {
+      "title": "Data Privacy",
+      "description": "Implemented a Data Privacy feature to support privacy requirements within the platform.",
+      "icon": "bi-shield-lock"
+    },
+    {
+      "title": "Dynamic Form Validation",
+      "description": "Improved input validation by fixing validation triggers, adding missing maxlength constraints, and implementing field-specific validation messages.",
+      "icon": "bi-input-cursor-text"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/macea.jpg",
+      "title": "MACEA Permit Processing System",
+      "description": "Permit processing interface and application workflow."
+    }
+  ],
+  "techStack": [
+    {
+      "name": "Angular",
+      "category": "Frontend"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Language"
+    },
+    {
+      "name": "PrimeNG",
+      "category": "UI Library"
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Styling"
+    },
+    {
+      "name": "ngx-permissions",
+      "category": "Permissions"
+    },
+    {
+      "name": "Git",
+      "category": "Version Control"
+    },
+    {
+      "name": "GitLab",
+      "category": "Collaboration"
+    }
+  ],
+  "cta": {
+    "title": "Interested in working together?",
+    "description": "Let's build thoughtful, reliable, and user-focused digital experiences."
+  }
+}
