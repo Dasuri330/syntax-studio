@@ -20,11 +20,21 @@
               [class.cgh-visual]="project.visualType === 'medical'"
               [class.parking-visual]="project.visualType === 'permit'"
               [class.aqua-visual]="project.visualType === 'dashboard'"
+              [class.reservation-visual]="project.visualType === 'reservation'"
+              [class.inventory-visual]="project.visualType === 'inventory'"
+              [class.iot-visual]="project.visualType === 'iot'"
+              [class.photography-visual]="project.visualType === 'photography'"
+              [class.ims-visual]="project.visualType === 'ims'"
               [class.generic-visual]="
                 !project.visualType ||
                 (project.visualType !== 'medical' &&
                   project.visualType !== 'permit' &&
-                  project.visualType !== 'dashboard')
+                  project.visualType !== 'dashboard' &&
+                  project.visualType !== 'reservation' &&
+                  project.visualType !== 'inventory' &&
+                  project.visualType !== 'iot' &&
+                  project.visualType !== 'photography' &&
+                  project.visualType !== 'ims')
               "
             >
               @switch (project.visualType) {
@@ -90,6 +100,134 @@
                           <div></div>
                         </div>
                         <div class="dashboard-chart"></div>
+                      </div>
+                    </div>
+                  </div>
+                }
+                @case ('reservation') {
+                  <div class="reservation-interface">
+                    <div class="reservation-header">
+                      <span class="reservation-title-bar"></span>
+                      <span class="reservation-badge">TABLES</span>
+                    </div>
+                    <div class="table-grid">
+                      <span class="table-node available"></span>
+                      <span class="table-node reserved"></span>
+                      <span class="table-node available"></span>
+                      <span class="table-node reserved"></span>
+                      <span class="table-node available"></span>
+                      <span class="table-node available"></span>
+                      <span class="table-node reserved"></span>
+                      <span class="table-node available"></span>
+                      <span class="table-node available"></span>
+                    </div>
+                  </div>
+                }
+                @case ('inventory') {
+                  <div class="inventory-interface">
+                    <div class="inventory-header">
+                      <span class="inventory-title-bar"></span>
+                      <span class="inventory-badge">LOW STOCK</span>
+                    </div>
+                    <div class="inventory-rows">
+                      <div class="inventory-row">
+                        <span class="inv-name"></span>
+                        <span class="inv-bar"><span class="inv-fill ok"></span></span>
+                      </div>
+                      <div class="inventory-row">
+                        <span class="inv-name"></span>
+                        <span class="inv-bar"><span class="inv-fill low"></span></span>
+                      </div>
+                      <div class="inventory-row">
+                        <span class="inv-name"></span>
+                        <span class="inv-bar"><span class="inv-fill ok"></span></span>
+                      </div>
+                      <div class="inventory-row">
+                        <span class="inv-name"></span>
+                        <span class="inv-bar"><span class="inv-fill critical"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                }
+                @case ('iot') {
+                  <div class="iot-interface">
+                    <div class="iot-header">
+                      <span class="iot-title-bar"></span>
+                      <span class="iot-badge">LIVE</span>
+                    </div>
+                    <div class="device-grid">
+                      <div class="device-tile">
+                        <span class="device-dot online"></span>
+                        <span class="device-line"></span>
+                      </div>
+                      <div class="device-tile">
+                        <span class="device-dot online"></span>
+                        <span class="device-line"></span>
+                      </div>
+                      <div class="device-tile">
+                        <span class="device-dot offline"></span>
+                        <span class="device-line"></span>
+                      </div>
+                      <div class="device-tile">
+                        <span class="device-dot online"></span>
+                        <span class="device-line"></span>
+                      </div>
+                    </div>
+                  </div>
+                }
+                @case ('photography') {
+                  <div class="photo-interface">
+                    <div class="photo-header">
+                      <span class="photo-title-bar"></span>
+                      <span class="photo-badge">BOOKED</span>
+                    </div>
+                    <div class="photo-thumbs">
+                      <span class="photo-thumb"></span>
+                      <span class="photo-thumb"></span>
+                      <span class="photo-thumb"></span>
+                    </div>
+                    <div class="slot-list">
+                      <div class="slot-row">
+                        <span class="slot-time"></span>
+                        <span class="slot-status booked"></span>
+                      </div>
+                      <div class="slot-row">
+                        <span class="slot-time"></span>
+                        <span class="slot-status open"></span>
+                      </div>
+                      <div class="slot-row">
+                        <span class="slot-time"></span>
+                        <span class="slot-status booked"></span>
+                      </div>
+                    </div>
+                  </div>
+                }
+                @case ('ims') {
+                  <div class="records-interface">
+                    <div class="records-header">
+                      <span class="records-title-bar"></span>
+                      <span class="records-badge">SYNCED</span>
+                    </div>
+                    <div class="records-table">
+                      <div class="records-row records-head">
+                        <span class="rec-col-id"></span>
+                        <span class="rec-col-name"></span>
+                        <span class="rec-col-date"></span>
+                      </div>
+                      <div class="records-row">
+                        <span class="rec-col-id"></span>
+                        <span class="rec-col-name"></span>
+                        <span class="rec-col-date"></span>
+                      </div>
+                      <div class="records-row">
+                        <span class="rec-col-id"></span>
+                        <span class="rec-col-name"></span>
+                        <span class="rec-col-date"></span>
+                      </div>
+                      <div class="records-row">
+                        <span class="rec-col-id"></span>
+                        <span class="rec-col-name"></span>
+                        <span class="rec-col-date"></span>
                       </div>
                     </div>
                   </div>

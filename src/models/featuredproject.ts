@@ -10,7 +10,16 @@ export interface featuredProject {
    * Leave blank or use 'generic' for any new project without a custom one —
    * it will automatically fall back to a generic code-window visual.
    */
-  visualType?: 'medical' | 'permit' | 'dashboard' | 'generic';
+  visualType?:
+    | 'medical'
+    | 'permit'
+    | 'dashboard'
+    | 'reservation'
+    | 'inventory'
+    | 'iot'
+    | 'photography'
+    | 'ims'
+    | 'generic';
   /**
    * Path/URL to an actual screenshot of the project, shown in the RIGHT
    * panel by default. When the user clicks "View details" on the card,
