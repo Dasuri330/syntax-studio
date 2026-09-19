@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
+
 import { NavbarComponent } from '../../../components/navbar.component/navbar.component';
 import { FeaturedProjectsComponent } from '../featured-projects.component/featured-projects.component';
 import { techLogo } from '../../../models/techlogo';
@@ -9,7 +11,7 @@ import { Skill } from '../../../models/skill';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, FeaturedProjectsComponent],
+  imports: [RouterLink, NavbarComponent, FeaturedProjectsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

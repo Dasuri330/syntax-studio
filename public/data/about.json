@@ -1,0 +1,182 @@
+{
+  "hero": {
+    "title": "ABOUT",
+    "highlight": "ME.",
+    "subtitle": "SOFTWARE Developer",
+    "description": "I'm a software developer focused on building practical, reliable, and user-friendly digital experiences. I enjoy turning complex requirements into clean and maintainable interfaces.",
+    "tags": [
+      "Angular",
+      "AngularJS",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Quality Assurance"
+    ]
+  },
+
+  "introduction": {
+    "paragraphs": [
+      "I'm a software developer who enjoys working on applications that solve real-world problems.",
+      "My experience includes building web applications, developing reusable UI components, integrating APIs, and working with existing enterprise systems.",
+      "I particularly enjoy the process of understanding a problem, breaking it down into smaller pieces, and turning it into an intuitive experience for the people who will actually use it."
+    ]
+  },
+
+  "profile": {
+    "basedIn": "Philippines",
+    "focus": "Frontend Development",
+    "stack": ["Angular", "TypeScript", "SCSS", "Bootstrap"],
+    "interests": ["Cloud", "Automation", "AI", "Manual/Automation Testings"]
+  },
+
+  "journey": [
+    {
+      "number": "01",
+      "icon": "bi-mortarboard",
+      "title": "STUDIED Information Technology",
+      "description": "BS Information Technology with Specialization in Mobile and Internet Technologies, consistent Dean's Lister for the whole academic year 2022 to 2026.",
+      "year": "August 2022 – August 2026"
+    },
+    {
+      "number": "02",
+      "icon": "bi-code-slash",
+      "title": "STARTED AS INTERN",
+      "description": "Joined Exist Software Labs as a Front-End Developer Intern, gaining hands-on experience in front-end development, contributing to real-world software projects, and collaborating with experienced developers in a professional environment.",
+      "year": "December 2025 - June 2026"
+    },
+
+    {
+      "number": "03",
+      "icon": "bi-folder2-open",
+      "title": "WORKED ON MACEA PROJECT",
+      "description": "Contributed to MACEA, a multi-stage permit application system built with Angular, TypeScript, and PrimeNG. Built data tables with frozen columns and role-based column visibility, integrated REST APIs for permit retrieval, cancellation, and document downloads, and implemented responsive layouts for both desktop and mobile.",
+      "year": "January - April 2026"
+    },
+
+    {
+      "number": "04",
+      "icon": "bi-arrow-up-circle",
+      "title": "BECAME SOFTWARE DEVELOPER TRAINEE",
+      "description": "Transitioned into a Software Developer Trainee role at Exist Software Labs, taking on more ownership across projects, deeper debugging work, and closer collaboration with the development team.",
+      "year": "May 2026 - September 2026"
+    },
+    {
+      "number": "05",
+      "icon": "bi-hospital",
+      "title": "WORKED ON EMR SYSTEMS",
+      "description": "Built and maintained modules for CGH Digitalization, an AngularJS-based EMR system, covering patient care plans, treatment records, and medication management. Implemented pagination, role-based permissions, concurrency/stale-detection polling, and cross-browser fixes across multiple modules.",
+      "year": "March 2025 – September 2026"
+    },
+    {
+      "number": "06",
+      "icon": "bi-rocket-takeoff",
+      "title": "EXPANDING SKILLS",
+      "description": "Expanding my skills in cloud technologies, QA, manual and automation, and AI while exploring new areas beyond frontend development."
+    }
+  ],
+
+  "capabilities": [
+    {
+      "icon": "bi-window",
+      "title": "FRONTEND",
+      "description": "Building responsive and maintainable interfaces with Angular, JavaScript, TypeScript, SCSS, and Bootstrap."
+    },
+    {
+      "icon": "bi-server",
+      "title": "BACKEND",
+      "description": "Building REST APIs and database-driven backends with Node.js, Express, FastAPI, and Supabase for full-stack side projects."
+    },
+    {
+      "icon": "bi-person-check",
+      "title": "USER EXPERIENCE",
+      "description": "Creating interfaces that are clear, consistent, responsive, and easy to use."
+    },
+    {
+      "icon": "bi-bug",
+      "title": "PROBLEM SOLVING",
+      "description": "Debugging complex application behavior and finding practical solutions to technical problems."
+    },
+    {
+      "icon": "bi-clipboard2-check",
+      "title": "QUALITY ASSURANCE",
+      "description": "Doing manual and automation testing to catch issues early and keep features reliable before they ship."
+    }
+  ],
+
+  "toolbox": [
+    {
+      "category": "LANGUAGES",
+      "icon": "bi-code",
+      "technologies": ["JavaScript", "TypeScript", "Python", "MySQL", "HTML", "CSS/SCSS"]
+    },
+    {
+      "category": "FRAMEWORKS",
+      "icon": "bi-layers",
+      "technologies": ["Angular", "AngularJS", "React", "Bootstrap", "FastAPI", "PrimeNG"]
+    },
+    {
+      "category": "TOOLS",
+      "icon": "bi-tools",
+      "technologies": ["Git", "VS Code", "Render", "Supabase"]
+    },
+    {
+      "category": "PLATFORMS",
+      "icon": "bi-diagram-3",
+      "technologies": ["GitHub", "GitLab", "Jira", "Figma"]
+    }
+  ],
+
+  "principles": [
+    {
+      "title": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "description": "— Martin Fowler (Author of Refactoring)"
+    },
+    {
+      "icon": "bi-lightbulb",
+      "title": "UNDERSTAND FIRST",
+      "description": "Before writing code, understand the actual problem being solved."
+    },
+    {
+      "icon": "bi-puzzle",
+      "title": "BREAK IT DOWN",
+      "description": "Split complex problems into smaller, manageable pieces."
+    },
+    {
+      "icon": "bi-people",
+      "title": "BUILD FOR USERS",
+      "description": "Every interface should be intuitive for the people who'll actually use it."
+    }
+  ],
+
+  "exploring": [
+    {
+      "icon": "bi-cloud",
+      "title": "CLOUD",
+      "description": "Exploring cloud technologies and deployment."
+    },
+    {
+      "icon": "bi-robot",
+      "title": "AI & AUTOMATION",
+      "description": "Learning workflow automation and AI integration."
+    },
+    {
+      "icon": "bi-shield-check",
+      "title": "SOFTWARE QUALITY",
+      "description": "Expanding into testing and code quality practices."
+    }
+  ],
+
+  "stats": [
+    { "value": "3+", "icon": "bi-briefcase", "label": "YEARS EXPERIENCE" },
+    { "value": "10+", "icon": "bi-heart-pulse", "label": "EMR MODULES" },
+    { "value": "6+", "icon": "bi-kanban", "label": "PROJECTS" }
+  ],
+
+  "cta": {
+    "eyebrow": "LET'S BUILD",
+    "title": "LET'S BUILD",
+    "highlight": "SOMETHING.",
+    "button": "LET'S TALK"
+  }
+}
