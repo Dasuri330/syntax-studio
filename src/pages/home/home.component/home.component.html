@@ -162,6 +162,20 @@
           MY
           <span>EXPERIENCE.</span>
         </h2>
+
+        <div class="experience-stats">
+          @for (stat of stats() ?? []; track stat.label) {
+            <div class="experience-stat">
+              <div class="experience-stat-icon">
+                <i class="bi {{ stat.icon }}"></i>
+              </div>
+              <div>
+                <strong>{{ stat.value }}</strong>
+                <span>{{ stat.label }}</span>
+              </div>
+            </div>
+          }
+        </div>
       </div>
 
       <div class="col-lg-8">
@@ -193,21 +207,4 @@
   </div>
 </section>
 
-<section class="contact-section" id="contact">
-  <div class="container position-relative">
-    <div class="contact-box">
-      <span class="section-number"> 05 </span>
-
-      <h2>
-        HAVE A PROJECT
-        <span>IN MIND?</span>
-      </h2>
-      <p>I'm always open to discussing software projects, opportunities, and ideas.</p>
-
-      <a routerLink="/contact" class="primary-button">
-        LET'S TALK
-        <i class="bi bi-arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
-</section>
+<app-cta></app-cta>

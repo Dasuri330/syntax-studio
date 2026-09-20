@@ -1,0 +1,60 @@
+<section class="contact-section" id="contact">
+  <div class="container position-relative">
+    <div class="contact-box">
+      <span class="section-number">{{ sectionNumber }}</span>
+
+      <h2>
+        {{ title }}
+        <span>{{ highlight }}</span>
+      </h2>
+      <p>{{ description }}</p>
+
+      <button type="button" class="primary-button" (click)="openModal()">
+        {{ buttonText }}
+        <i class="bi bi-arrow-up-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+@if (isModalOpen()) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-box" (click)="$event.stopPropagation()">
+      <button type="button" class="modal-close" (click)="closeModal()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <h3>LET'S <span>TALK.</span></h3>
+      <p>Fill out the form and I'll get back to you as soon as I can.</p>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">FIRST NAME</label>
+            <input id="firstName" type="text" name="firstName" [(ngModel)]="firstName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">LAST NAME</label>
+            <input id="lastName" type="text" name="lastName" [(ngModel)]="lastName" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">EMAIL</label>
+          <input id="email" type="email" name="email" [(ngModel)]="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">MESSAGE</label>
+          <textarea id="message" name="message" rows="4" [(ngModel)]="message" required></textarea>
+        </div>
+
+        <button type="submit" class="primary-button modal-submit">
+          SEND MESSAGE
+          <i class="bi bi-arrow-up-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+}

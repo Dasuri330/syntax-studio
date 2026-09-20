@@ -1,7 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
+import { CtaComponent } from '../../../components/cta.component/cta.component';
 import { NavbarComponent } from '../../../components/navbar.component/navbar.component';
 import { featuredProject } from '../../../models/featuredproject';
 
@@ -51,7 +51,7 @@ interface CaseStudyData {
 
 @Component({
   selector: 'app-case-study',
-  imports: [RouterLink, NavbarComponent],
+  imports: [RouterLink, NavbarComponent, CtaComponent],
   templateUrl: './case-study.component.html',
   styleUrl: './case-study.component.css',
 })

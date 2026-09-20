@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ContactCtaComponent } from './contact-cta.component';
+import { CtaComponent } from './cta-component';
 
-describe('ContactCtaComponent', () => {
-  let component: ContactCtaComponent;
-  let fixture: ComponentFixture<ContactCtaComponent>;
+describe('CtaComponent', () => {
+  let component: CtaComponent;
+  let fixture: ComponentFixture<CtaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContactCtaComponent],
+      imports: [CtaComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ContactCtaComponent);
+    fixture = TestBed.createComponent(CtaComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
