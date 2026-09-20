@@ -1,0 +1,224 @@
+.contact-section {
+  padding: 100px 0;
+  background: radial-gradient(circle at 50% 50%, rgba(140, 103, 255, 0.12), transparent 45%);
+}
+
+.contact-box {
+  padding: 70px 30px;
+  text-align: center;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 10%, rgba(67, 228, 208, 0.1), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 10% 70%, rgba(32, 104, 108, 0.08), transparent 65%),
+    linear-gradient(135deg, #181e20 0%, #1b2527 50%, #142224 100%);
+  border: 1px solid rgba(67, 228, 208, 0.15);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.contact-box h2 {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: clamp(45px, 7vw, 85px);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -4px;
+  color: #fff;
+}
+
+.contact-box h2 span {
+  color: #43e4d0;
+}
+
+.contact-box p {
+  margin-bottom: 30px;
+  color: #7e898b;
+  font-size: 17px;
+}
+
+.contact-box .primary-button {
+  display: inline-flex;
+}
+
+.section-number {
+  display: block;
+  margin-bottom: 12px;
+  color: #43e4d0;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: #43e4d0;
+  color: #000;
+}
+
+.primary-button:hover {
+  background: #36bfae;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 575px) {
+  .contact-box {
+    padding: 50px 20px;
+  }
+
+  .contact-box h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+}
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(7, 11, 12, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 40px;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 10%, rgba(67, 228, 208, 0.1), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 10% 70%, rgba(32, 104, 108, 0.08), transparent 65%),
+    linear-gradient(135deg, #181e20 0%, #1b2527 50%, #142224 100%);
+  border: 1px solid rgba(67, 228, 208, 0.15);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  background: transparent;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-close:hover {
+  border-color: #43e4d0;
+  color: #43e4d0;
+}
+
+.modal-box h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.modal-box h3 span {
+  color: #43e4d0;
+}
+
+.modal-box > p {
+  margin: 0 0 28px;
+  color: #7e898b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #43e4d0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  font-size: 14px;
+  font-family: inherit;
+  transition: 0.2s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #556063;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #43e4d0;
+  background: rgba(67, 228, 208, 0.05);
+}
+
+.modal-submit {
+  width: 100%;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 575px) {
+  .modal-box {
+    padding: 28px 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavbarComponent } from '../../../components/navbar.component/navbar.component';
+import { CtaComponent } from '../../../components/cta.component/cta.component';
 
 interface AboutData {
   hero: {
@@ -73,7 +74,7 @@ interface AboutData {
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink, NavbarComponent],
+  imports: [RouterLink, NavbarComponent, CtaComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })

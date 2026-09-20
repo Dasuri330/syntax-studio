@@ -367,43 +367,7 @@
             }
           </div>
         </div>
-
-        <!-- =====================================================
-             CTA
-        ===================================================== -->
-
-        <div class="about-cta" id="contact">
-          <div class="cta-stats">
-            @for (stat of data.stats; track stat.label) {
-              <div class="stat">
-                <div class="stat-icon">
-                  <i class="bi {{ stat.icon }}"></i>
-                </div>
-
-                <div>
-                  <strong>{{ stat.value }}</strong>
-                  <span>{{ stat.label }}</span>
-                </div>
-              </div>
-            }
-          </div>
-
-          <div class="cta-message">
-            <small>
-              {{ data.cta.eyebrow }}
-            </small>
-
-            <h2>
-              {{ data.cta.title }}
-              <span>{{ data.cta.highlight }}</span>
-            </h2>
-          </div>
-
-          <a routerLink="/" fragment="contact" class="cta-button">
-            {{ data.cta.button }}
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-        </div>
+        <app-cta></app-cta>
       </div>
     </section>
   }

@@ -676,7 +676,7 @@
 
 .principle-item h5 {
   margin: 0 0 7px;
-  color: var(--about-accent-dark);
+  color: var(--about-text);
   font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
@@ -695,6 +695,10 @@
 
 .exploring-section {
   padding: 55px 0 35px;
+}
+
+.exploring-section .section-layout {
+  align-items: center;
 }
 
 .exploring-grid {
@@ -719,7 +723,7 @@
 
 .exploring-card h4 {
   margin: 0 0 6px;
-  color: var(--about-accent-dark);
+  color: var(--about-text);
   font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
