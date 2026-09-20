@@ -9,7 +9,7 @@
 .all-projects-section {
   position: relative;
   min-height: 100vh;
-  padding: 68px 0 100px;
+  padding: 41px 0 100px;
   overflow: hidden;
 
   background:
@@ -28,9 +28,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-
   background: radial-gradient(circle at 50% 0%, rgba(67, 228, 208, 0.04), transparent 38%);
-
   opacity: 1;
 }
 
@@ -41,21 +39,16 @@
 .section-heading {
   position: relative;
   z-index: 1;
-
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   margin-bottom: 45px;
 }
 
 .section-number {
   display: block;
-
   margin-bottom: 12px;
-
   color: #43e4d0;
-
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -63,9 +56,7 @@
 
 .section-heading h2 {
   margin: 0;
-
   color: #f3f7f6;
-
   font-size: clamp(40px, 5vw, 65px);
   line-height: 0.9;
   font-weight: 800;
@@ -74,6 +65,31 @@
 
 .section-heading h2 span {
   color: #8aa5a7;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 34px;
+  color: #7b8789;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: #ffffff;
+  transform: translateX(-4px);
+}
+
+.back-link i {
+  font-size: 12px;
 }
 
 /* =========================================================

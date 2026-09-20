@@ -11,6 +11,10 @@
       "TypeScript",
       "JavaScript",
       "Python",
+      "SCSS",
+      "Bootstrap",
+      "FastAPI",
+      "MYSQL",
       "Quality Assurance"
     ]
   },
@@ -25,9 +29,9 @@
 
   "profile": {
     "basedIn": "Philippines",
-    "focus": "Frontend Development",
-    "stack": ["Angular", "TypeScript", "SCSS", "Bootstrap"],
-    "interests": ["Cloud", "Automation", "AI", "Manual/Automation Testings"]
+    "focus": "Fullstack Development",
+    "stack": ["Angular", "TypeScript", "SCSS", "Bootstrap", "JavaScript"],
+    "interests": ["Cloud", "Automation workflows", "AI", "Manual/Automation Testings"]
   },
 
   "journey": [

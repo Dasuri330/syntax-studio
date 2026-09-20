@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { featuredProject } from '../../models/featuredproject';
@@ -7,7 +8,7 @@ import { NavbarComponent } from '../../components/navbar.component/navbar.compon
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectListComponent, NavbarComponent],
+  imports: [ProjectListComponent, NavbarComponent, RouterLink],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
