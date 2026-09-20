@@ -1,67 +1,163 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject, signal } from '@angular/core';
+import { Router, NavigationEnd, RouterLink } from '@angular/router';
+import { Subscription, filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  activeSection: string = 'home';
+  private router = inject(Router);
+  private routerSub: Subscription | null = null;
+
+  activeSection = signal('home');
   private observer: IntersectionObserver | null = null;
+  private pendingSectionId: string | null = null;
+  private pendingSectionTimer: ReturnType<typeof setTimeout> | null = null;
+
+  private readonly sectionToTab: Record<string, string> = {
+    home: 'home',
+    projects: 'projects',
+    about: 'about',
+    skills: 'about',
+    experience: 'about',
+    contact: 'contact',
+  };
 
   ngOnInit() {
-    this.setupScrollSpy();
+    this.syncFromRoute(this.router.url);
+
+    this.routerSub = this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event) => this.syncFromRoute(event.urlAfterRedirects));
+  }
+
+  private syncFromRoute(url: string) {
+    if (this.isHomeRoute(url)) {
+      const fragment = this.getFragment(url);
+      if (fragment && this.sectionToTab[fragment]) {
+        this.activeSection.set(this.sectionToTab[fragment]);
+        this.pendingSectionId = fragment;
+        this.schedulePendingSectionReset();
+      }
+
+      if (!this.observer) {
+        this.setupScrollSpy();
+      }
+      return;
+    }
+
+    this.observer?.disconnect();
+    this.observer = null;
+
+    if (url.startsWith('/about')) {
+      this.activeSection.set('about');
+    } else if (url.startsWith('/projects')) {
+      this.activeSection.set('projects');
+    } else if (url.startsWith('/contact')) {
+      this.activeSection.set('contact');
+    } else {
+      this.activeSection.set('home');
+    }
+  }
+
+  private isHomeRoute(url: string): boolean {
+    return url === '/' || url.startsWith('/#') || url.startsWith('/?');
+  }
+
+  private getFragment(url: string): string | null {
+    const fragment = url.split('#')[1]?.split('?')[0];
+    return fragment ? decodeURIComponent(fragment) : null;
   }
 
   setupScrollSpy() {
-    const options = {
+    const options: IntersectionObserverInit = {
       root: null,
-      // Creates a 1px trigger line across the exact vertical center of the screen.
-      // Whichever section touches this middle line becomes the active link.
       rootMargin: '-50% 0px -50% 0px',
       threshold: 0,
     };
 
-    // Sections that don't have their own nav tab (skills, experience) are
-    // treated as part of the nearest tab's zone — keeps ABOUT highlighted
-    // continuously through them instead of leaving a "dead zone".
-    const sectionToTab: Record<string, string> = {
-      home: 'home',
-      projects: 'projects',
-      about: 'about',
-      skills: 'about',
-      experience: 'about',
-      contact: 'contact',
-    };
-
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.activeSection = sectionToTab[entry.target.id] ?? entry.target.id;
-        }
-      });
+    this.observer = new IntersectionObserver(() => {
+      this.recomputeActiveSection();
     }, options);
 
     setTimeout(() => {
-      Object.keys(sectionToTab).forEach((id) => {
+      Object.keys(this.sectionToTab).forEach((id) => {
         const element = document.getElementById(id);
         if (element) this.observer?.observe(element);
       });
+      this.recomputeActiveSection();
     }, 100);
   }
 
+  private recomputeActiveSection() {
+    if (this.pendingSectionId) {
+      const target = document.getElementById(this.pendingSectionId);
+
+      if (!target) return;
+
+      // Keep the clicked tab active while the smooth scroll is in progress.
+      // The target should finish approximately 80px below the viewport top.
+      const targetReached = Math.abs(target.getBoundingClientRect().top - 80) <= 120;
+      if (!targetReached) return;
+
+      this.pendingSectionId = null;
+    }
+
+    const mid = window.innerHeight / 2;
+
+    for (const id of Object.keys(this.sectionToTab)) {
+      const element = document.getElementById(id);
+      if (!element) continue;
+
+      const rect = element.getBoundingClientRect();
+      if (rect.top <= mid && rect.bottom >= mid) {
+        this.activeSection.set(this.sectionToTab[id]);
+        return;
+      }
+    }
+  }
+
   scrollToSection(sectionId: string) {
+    this.activeSection.set(this.sectionToTab[sectionId] ?? sectionId);
+    this.pendingSectionId = sectionId;
+
+    this.schedulePendingSectionReset();
+
     const element = document.getElementById(sectionId);
     if (element) {
-      // Offset by 80px to account for your fixed sticky navbar
       const y = element.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: y, behavior: 'smooth' });
+      return;
     }
+
+    // The section is not part of the current routed page. Return to the home
+    // page and let Angular's anchor scrolling find it after navigation.
+    this.router.navigate(['/'], { fragment: sectionId });
+  }
+
+  private schedulePendingSectionReset() {
+    if (this.pendingSectionTimer) {
+      clearTimeout(this.pendingSectionTimer);
+    }
+
+    // Prevent a pending navigation from blocking the scroll spy indefinitely
+    // if the user interrupts the smooth scroll.
+    this.pendingSectionTimer = setTimeout(() => {
+      this.pendingSectionId = null;
+      this.recomputeActiveSection();
+    }, 2000);
   }
 
   ngOnDestroy() {
     if (this.observer) {
       this.observer.disconnect();
     }
+    if (this.pendingSectionTimer) {
+      clearTimeout(this.pendingSectionTimer);
+    }
+    this.routerSub?.unsubscribe();
   }
 }

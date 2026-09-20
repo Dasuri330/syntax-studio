@@ -1,10 +1,9 @@
 import { Component, Input, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cta',
-  imports: [RouterLink, FormsModule],
+  imports: [FormsModule],
   templateUrl: './cta.component.html',
   styleUrl: './cta.component.css',
 })
