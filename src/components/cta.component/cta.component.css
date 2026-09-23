@@ -250,3 +250,55 @@
     gap: 0;
   }
 }
+.success-state {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(67, 228, 208, 0.12);
+  border: 2px solid #43e4d0;
+  color: #43e4d0;
+  font-size: 28px;
+}
+
+.success-state h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.success-state h3 span {
+  color: #43e4d0;
+}
+
+.success-state p {
+  margin: 0 0 28px;
+  color: #7e898b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.success-state .primary-button {
+  width: 100%;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-error {
+  margin: 0 0 14px;
+  color: #ff6b6b;
+  font-size: 12px;
+  text-align: center;
+}
