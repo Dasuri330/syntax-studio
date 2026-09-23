@@ -1,5 +1,6 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ContactModalService } from '../../services/contact-modal.service';
 
 @Component({
   selector: 'app-cta',
@@ -16,7 +17,9 @@ export class CtaComponent {
   @Input() buttonText = "LET'S TALK";
   @Input() buttonLink = '/contact';
 
-  isModalOpen = signal(false);
+  private contactModal = inject(ContactModalService);
+
+  isModalOpen = this.contactModal.isOpen;
 
   firstName = '';
   lastName = '';
@@ -24,15 +27,14 @@ export class CtaComponent {
   message = '';
 
   openModal() {
-    this.isModalOpen.set(true);
+    this.contactModal.open();
   }
 
   closeModal() {
-    this.isModalOpen.set(false);
+    this.contactModal.close();
   }
 
   onSubmit() {
-    // TODO: change it to actual API call/email service once available
     console.log({
       firstName: this.firstName,
       lastName: this.lastName,

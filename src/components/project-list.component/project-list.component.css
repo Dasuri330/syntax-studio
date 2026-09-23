@@ -32,7 +32,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: clamp(28px, 5vw, 45px);
+}
+
+.project-row {
+  --bs-gutter-x: clamp(1rem, 3vw, 1.5rem);
+  --bs-gutter-y: clamp(1.25rem, 4vw, 1.5rem);
 }
 
 /* =========================================================
@@ -1162,46 +1167,132 @@
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
+  .projects-list {
+    gap: 34px;
+  }
+
   .project-visual {
-    height: 280px;
+    height: clamp(250px, 32vw, 300px);
+  }
+
+  .project-caption,
+  .project-caption.reverse-caption {
+    padding: 20px 24px 24px;
+  }
+
+  .project-caption h3 {
+    max-width: 420px;
+    font-size: clamp(21px, 3vw, 26px);
   }
 
   .project-detail-panel {
-    min-height: 200px;
+    min-height: clamp(230px, 29vw, 280px);
+  }
+
+  .detail-inner {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 991px) {
+  .project-visual {
+    height: clamp(240px, 35vw, 280px);
+  }
+
+  .project-detail-panel {
+    min-height: clamp(200px, 30vw, 260px);
+  }
+}
+
+@media (max-width: 767px) {
+  .project-card {
+    border-radius: 15px;
+  }
+
+  .project-visual {
+    height: clamp(210px, 58vw, 270px);
+  }
+
+  .project-detail-panel {
+    min-height: clamp(220px, 62vw, 300px);
+  }
+
+  .project-caption,
+  .project-caption.reverse-caption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 22px 23px;
+  }
+
+  .project-caption.reverse-caption .project-caption-text {
+    text-align: left;
+  }
+
+  .project-caption h3 {
+    max-width: 100%;
+    font-size: clamp(19px, 5vw, 23px);
+    overflow-wrap: anywhere;
+  }
+
+  .project-cta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .detail-inner {
+    padding: 23px;
+  }
+
+  .detail-inner h3 {
+    font-size: clamp(20px, 6vw, 24px);
+    overflow-wrap: anywhere;
   }
 }
 
 @media (max-width: 575px) {
-  .project-caption {
-    padding: 20px 22px 24px;
-  }
-
-  .project-caption h3 {
-    font-size: 20px;
-  }
-
   .project-visual {
-    height: 230px;
+    height: clamp(190px, 57vw, 230px);
   }
 
   .dashboard {
-    width: 85%;
+    width: min(85%, 320px);
   }
 
   .medical-interface {
-    width: 75%;
+    width: min(75%, 280px);
   }
 
   .generic-window {
-    width: 80%;
+    width: min(80%, 300px);
   }
 
   .reservation-interface {
-    width: 82%;
+    width: min(82%, 300px);
   }
 
   .inventory-interface {
-    width: 85%;
+    width: min(85%, 310px);
+  }
+
+  .project-number {
+    top: 14px;
+    left: 14px;
+    font-size: 14px;
+  }
+
+  .detail-inner {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-visual {
+    height: clamp(250px, 32vw, 300px);
+  }
+
+  .project-detail-panel {
+    min-height: clamp(230px, 29vw, 280px);
   }
 }

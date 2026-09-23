@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, inject, signal } from '@angular/core';
 import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
+import { ContactModalService } from '../../services/contact-modal.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +11,11 @@ import { Subscription, filter } from 'rxjs';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private router = inject(Router);
+  private contactModal = inject(ContactModalService);
   private routerSub: Subscription | null = null;
 
   activeSection = signal('home');
+  menuOpen = signal(false);
   private observer: IntersectionObserver | null = null;
   private pendingSectionId: string | null = null;
   private pendingSectionTimer: ReturnType<typeof setTimeout> | null = null;
@@ -121,6 +124,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   scrollToSection(sectionId: string) {
+    this.menuOpen.set(false);
     this.activeSection.set(this.sectionToTab[sectionId] ?? sectionId);
     this.pendingSectionId = sectionId;
 
@@ -136,6 +140,19 @@ export class NavbarComponent implements OnInit, OnDestroy {
     // The section is not part of the current routed page. Return to the home
     // page and let Angular's anchor scrolling find it after navigation.
     this.router.navigate(['/'], { fragment: sectionId });
+  }
+
+  toggleMenu() {
+    this.menuOpen.update((isOpen) => !isOpen);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
+  }
+
+  openContactModal() {
+    this.closeMenu();
+    this.contactModal.open();
   }
 
   private schedulePendingSectionReset() {

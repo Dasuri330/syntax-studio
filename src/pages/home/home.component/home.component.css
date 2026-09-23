@@ -6,6 +6,12 @@
   padding: 78px 0;
 }
 
+.hero-section .container,
+.section .container {
+  position: relative;
+  z-index: 1;
+}
+
 .section-header {
   display: flex;
   align-items: flex-end;
@@ -192,8 +198,7 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  /* Removed align-items: center; to stop it from pushing to the middle */
-  padding-top: 80px; /* Adjust this number to move the content higher or lower */
+  padding: 80px 0 110px;
   overflow: hidden;
 }
 
@@ -242,6 +247,7 @@
 
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -255,6 +261,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hero-visual-column {
+  min-width: 0;
 }
 
 .developer-card {
@@ -296,6 +306,7 @@
   font-size: 14px;
   line-height: 1.8;
   color: #e2e8f0;
+  overflow-wrap: anywhere;
 }
 
 .code-comment {
@@ -493,6 +504,10 @@
   gap: 30px;
   padding: 20px 0 40px 0;
 }
+
+.experience-content {
+  min-width: 0;
+}
 /* Glowing dot on the timeline */
 .timeline-dot {
   position: absolute;
@@ -674,7 +689,64 @@
    SECTION RESPONSIVE
 ========================================================= */
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-section {
+    padding: 62px 0 95px;
+  }
+
+  .hero-title {
+    max-width: 760px;
+    font-size: clamp(52px, 7.2vw, 72px);
+  }
+
+  .hero-description {
+    max-width: 680px;
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    gap: 14px;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+    margin-top: 12px;
+  }
+
+  .developer-card {
+    max-width: 560px;
+    padding: 26px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .intro-title {
+    margin-bottom: 22px;
+    font-size: clamp(42px, 6vw, 58px);
+  }
+
+  .experience-heading {
+    margin-bottom: 36px;
+  }
+}
+
 @media (max-width: 991px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 60px;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+    margin-top: 20px;
+  }
+
+  .developer-card {
+    max-width: 520px;
+  }
+
   .section {
     padding: 85px 0;
   }
@@ -688,6 +760,85 @@
   .experience-heading {
     margin-bottom: 50px;
   }
+
+  .experience-item {
+    grid-template-columns: 150px minmax(0, 1fr) 24px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 68px 0;
+  }
+
+  .hero-section {
+    padding: 45px 0 85px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 11vw, 68px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    margin-bottom: 28px;
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    justify-content: center;
+    padding: 13px 20px;
+  }
+
+  .hero-visual {
+    min-height: 300px;
+  }
+
+  .developer-card {
+    padding: 22px;
+  }
+
+  .code-content {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card:nth-child(odd) {
+    border-right: none;
+  }
+
+  .experience-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr 24px;
+    gap: 10px;
+  }
+
+  .experience-year {
+    grid-column: 1 / -1;
+    margin-bottom: -5px;
+  }
+
+  .experience-content {
+    grid-column: 1;
+  }
+
+  .experience-arrow {
+    grid-column: 2;
+    grid-row: 2;
+  }
 }
 
 @media (max-width: 575px) {
@@ -699,30 +850,39 @@
     font-size: 42px;
   }
 
+  .experience-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+
+  .experience-stat {
+    flex: 1;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .experience-stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .experience-stat strong {
+    font-size: 14px;
+  }
+
+  .experience-stat span {
+    font-size: 6.5px;
+    letter-spacing: 0.3px;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
-  }
-
-  .skill-card:nth-child(odd) {
-    border-right: none;
-  }
-
-  .experience-item {
-    grid-template-columns: 1fr 20px;
-    gap: 10px;
-  }
-
-  .experience-year {
-    grid-column: 1 / -1;
-  }
-
-  .experience-content {
-    grid-column: 1;
-  }
-
-  .experience-arrow {
-    grid-column: 2;
-    grid-row: 2;
   }
 
   .contact-box {
@@ -732,5 +892,75 @@
   .contact-box h2 {
     font-size: 48px;
     letter-spacing: -2px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero-title {
+    font-size: 39px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 255px;
+  }
+
+  .developer-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .code-content {
+    font-size: 10px;
+  }
+
+  .code-indent {
+    padding-left: 12px;
+  }
+
+  .code-indent-deep {
+    padding-left: 24px;
+  }
+
+  .experience-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    gap: 14px;
+    padding: 17px 12px;
+  }
+
+  .skill-name {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-section {
+    padding-top: 62px;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+  }
+
+  .developer-card {
+    max-width: 560px;
+    padding: 26px;
   }
 }
