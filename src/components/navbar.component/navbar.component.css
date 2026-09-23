@@ -72,6 +72,9 @@
   letter-spacing: 1px;
   text-decoration: none;
   transition: all 0.25s ease;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .navbar-cta:hover {
@@ -82,6 +85,7 @@
 
 .navbar-toggler {
   border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: #ffffff;
 }
 
 .navbar-toggler:focus {
@@ -113,5 +117,29 @@
 
   .navbar-cta {
     margin-top: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .portfolio-navbar .container {
+    max-width: 720px;
+  }
+
+  .portfolio-logo {
+    font-size: 17px;
+  }
+
+  .navbar-collapse {
+    padding: 18px 22px;
+  }
+
+  .navbar-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+
+  .navbar-cta {
+    width: fit-content;
   }
 }

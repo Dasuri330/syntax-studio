@@ -11,17 +11,16 @@
     <button
       class="navbar-toggler"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#portfolioNavbar"
       aria-controls="portfolioNavbar"
-      aria-expanded="false"
+      [attr.aria-expanded]="menuOpen()"
       aria-label="Toggle navigation"
+      (click)="toggleMenu()"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Navigation -->
-    <div class="collapse navbar-collapse" id="portfolioNavbar">
+    <div class="collapse navbar-collapse" id="portfolioNavbar" [class.show]="menuOpen()">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <a
@@ -68,10 +67,10 @@
         </li>
       </ul>
 
-      <a routerLink="/contact" class="navbar-cta">
+      <button type="button" class="navbar-cta" (click)="openContactModal()">
         LET'S TALK
         <i class="bi bi-arrow-up-right"></i>
-      </a>
+      </button>
     </div>
   </div>
 </nav>

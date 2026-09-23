@@ -57,6 +57,7 @@
 
 .case-study-page .container {
   width: min(var(--cs-container), calc(100% - 48px));
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -321,7 +322,7 @@
 
 .project-overview {
   position: relative;
-  padding: 30px 0 120px;
+  padding: 14px 0 120px;
 }
 
 .overview-grid {
@@ -826,8 +827,8 @@
 @media (max-width: 1100px) {
   .hero-grid {
     grid-template-columns:
-      minmax(0, 0.85fr)
-      minmax(360px, 1.15fr);
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
 
     gap: 40px;
     padding: 42px;
@@ -840,7 +841,7 @@
   .overview-grid {
     grid-template-columns:
       minmax(0, 1.15fr)
-      minmax(300px, 0.85fr);
+      minmax(0, 0.85fr);
 
     gap: 45px;
   }
@@ -966,11 +967,20 @@
     border-radius: 16px;
   }
 
+  .hero-image {
+    max-height: 60vw;
+    object-fit: cover;
+  }
+
   .project-overview,
   .key-features,
   .gallery-section,
   .tech-stack-section {
     padding: 82px 0;
+  }
+
+  .project-overview {
+    padding-top: 52px;
   }
 
   .section-heading {
@@ -1096,6 +1106,12 @@
 
   .case-study-cta {
     padding: 100px 0;
+  }
+
+  .cta-link {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
   }
 
   .cta-content h2 {

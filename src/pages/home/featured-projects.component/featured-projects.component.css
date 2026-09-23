@@ -64,6 +64,24 @@
   color: #ffffff;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .featured-section {
+    padding: 68px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(42px, 6vw, 58px);
+  }
+
+  .view-all {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 991px) {
   .section-heading {
     align-items: flex-start;

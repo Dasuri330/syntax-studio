@@ -1,5 +1,5 @@
 .contact-section {
-  padding: 100px 0;
+  padding: 70px 0 100px;
   background: radial-gradient(circle at 50% 50%, rgba(140, 103, 255, 0.12), transparent 45%);
 }
 
@@ -70,7 +70,35 @@
   transform: translateY(-2px);
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .contact-section {
+    padding: 60px 0 85px;
+  }
+
+  .contact-box {
+    padding: 58px 32px;
+    border-radius: 20px;
+  }
+
+  .contact-box h2 {
+    max-width: 680px;
+    font-size: clamp(48px, 8vw, 70px);
+    letter-spacing: -3px;
+  }
+
+  .contact-box p {
+    max-width: 560px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 575px) {
+  .contact-section {
+    padding-top: 40px;
+  }
+
   .contact-box {
     padding: 50px 20px;
   }

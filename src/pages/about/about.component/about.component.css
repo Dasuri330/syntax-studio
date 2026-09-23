@@ -15,7 +15,7 @@
   min-height: 100vh;
   background: #ffffff;
   color: var(--about-text);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* =========================================================
