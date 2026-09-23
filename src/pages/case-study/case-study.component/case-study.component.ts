@@ -70,33 +70,44 @@ export class CaseStudyComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const slug = this.route.snapshot.paramMap.get('slug');
+    this.route.paramMap.subscribe((params) => {
+      const slug = params.get('slug');
 
-    if (!slug) {
-      this.notFound.set(true);
-      this.loading.set(false);
-      return;
-    }
+      // Reset scroll to top every time the slug changes, since Angular
+      // reuses this component instance for /projects/:slug -> /projects/:slug
+      // navigations and doesn't reset scroll position on its own.
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
 
-    this.http.get<featuredProject[]>('/data/projects.json').subscribe({
-      next: (projects) => {
-        const foundProject = projects.find((project) => project.slug === slug);
+      this.loading.set(true);
+      this.notFound.set(false);
+      this.caseStudy.set(null);
 
-        if (!foundProject) {
-          this.notFound.set(true);
-          this.loading.set(false);
-          return;
-        }
-
-        this.project.set(foundProject);
-
-        this.loadCaseStudy(slug);
-      },
-
-      error: () => {
+      if (!slug) {
         this.notFound.set(true);
         this.loading.set(false);
-      },
+        return;
+      }
+
+      this.http.get<featuredProject[]>('/data/projects.json').subscribe({
+        next: (projects) => {
+          const foundProject = projects.find((project) => project.slug === slug);
+
+          if (!foundProject) {
+            this.notFound.set(true);
+            this.loading.set(false);
+            return;
+          }
+
+          this.project.set(foundProject);
+
+          this.loadCaseStudy(slug);
+        },
+
+        error: () => {
+          this.notFound.set(true);
+          this.loading.set(false);
+        },
+      });
     });
   }
 

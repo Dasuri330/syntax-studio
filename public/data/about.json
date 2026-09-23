@@ -31,7 +31,11 @@
     "basedIn": "Philippines",
     "focus": "Fullstack Development",
     "stack": ["Angular", "TypeScript", "SCSS", "Bootstrap", "JavaScript"],
-    "interests": ["Cloud", "Automation workflows", "AI", "Manual/Automation Testings"]
+    "interests": ["Cloud", "Automation workflows", "AI", "Manual/Automation Testings"],
+    "certifications": [
+      "Microsoft Certified: Azure Fundamentals",
+      "AWS Cloud Practitioner Essentials"
+    ]
   },
 
   "journey": [

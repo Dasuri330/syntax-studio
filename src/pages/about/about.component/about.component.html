@@ -130,6 +130,24 @@
                   </div>
                 </div>
               </div>
+
+              <div class="profile-divider-horizontal"></div>
+
+              <div class="profile-group">
+                <div class="profile-icon">
+                  <i class="bi bi-award"></i>
+                </div>
+
+                <div class="profile-group-content">
+                  <small>CERTIFICATIONS</small>
+
+                  <div class="tag-list">
+                    @for (item of data.profile.certifications; track item) {
+                      <span class="tag">{{ item }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
