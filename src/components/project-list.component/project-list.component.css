@@ -1,11 +1,3 @@
-/* ==========================================================================
-   PROJECT LIST — PREMIUM DARK / SLATE VISUAL SYSTEM
-   --------------------------------------------------------------------------
-   Visual treatment aligned with case-study.component.css.
-   Layout, Angular class names, bindings, sizing and responsive structure are
-   preserved; this refactor focuses on the visual system.
-   ========================================================================== */
-
 :host {
   --cs-bg: #181e20;
   --cs-bg-deep: #151b1d;
@@ -41,7 +33,7 @@
 }
 
 /* =========================================================
-   PROJECT CARD
+   PROJECT CARD (image side)
 ========================================================= */
 
 .project-card {
@@ -53,7 +45,6 @@
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
     var(--cs-surface);
-  cursor: pointer;
   box-shadow: var(--cs-shadow-sm);
   transition:
     transform 0.3s ease,
@@ -67,16 +58,6 @@
   box-shadow: var(--cs-shadow-md);
 }
 
-.project-card:focus-visible {
-  outline: 2px solid #43e4d0;
-  outline-offset: 3px;
-}
-
-.project-card.is-active {
-  border-color: rgba(67, 228, 208, 0.42);
-  box-shadow: var(--cs-shadow-md);
-}
-
 .project-number {
   position: absolute;
   top: 18px;
@@ -87,822 +68,48 @@
   letter-spacing: 1px;
 }
 
-/* =========================================================
-   PROJECT VISUAL
-========================================================= */
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
 
 .project-visual {
   position: relative;
-  height: 340px;
+  flex: 1;
+  min-height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.aqua-visual {
   background:
-    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.15), transparent 45%), #0a1011;
+    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.08), transparent 45%), #0a0e10;
 }
 
-.cgh-visual {
-  height: 290px;
-  background: radial-gradient(circle at 70% 30%, rgba(137, 95, 255, 0.2), transparent 45%), #0a0e10;
-}
-
-/* =========================================================
-   AQUA DASHBOARD
-========================================================= */
-
-.dashboard {
-  width: 72%;
-  overflow: hidden;
-  border: 1px solid var(--cs-border-accent);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
-    var(--cs-surface-soft);
-  box-shadow: var(--cs-shadow-lg);
-  transform: perspective(1000px) rotateY(-8deg) rotateX(2deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .dashboard {
-  transform: perspective(1000px) rotateY(-3deg) rotateX(1deg) scale(1.02);
-}
-
-.dashboard-top {
-  height: 26px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding-left: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.dashboard-top span {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #596264;
-}
-
-.dashboard-body {
-  display: flex;
-  height: 220px;
-}
-
-.dashboard-sidebar {
-  width: 18%;
-  padding: 15px 8px;
-  border-right: 1px solid var(--cs-border-soft);
-}
-
-.dashboard-sidebar div {
-  width: 70%;
-  height: 5px;
-  margin: 0 auto 17px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.dashboard-sidebar div:first-child {
-  background: #43e4d0;
-}
-
-.dashboard-content {
-  flex: 1;
-  padding: 18px;
-}
-
-.dashboard-heading {
-  width: 35%;
-  height: 8px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  background: #43e4d0;
-}
-
-.dashboard-stats {
-  display: flex;
-  gap: 8px;
-}
-
-.dashboard-stats div {
-  flex: 1;
-  height: 45px;
-  border-radius: 5px;
-  background: var(--cs-surface-raised);
-}
-
-.dashboard-chart {
-  height: 85px;
-  margin-top: 15px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, rgba(67, 228, 208, 0.12), rgba(125, 85, 255, 0.08));
-}
-
-/* =========================================================
-   CGH INTERFACE
-========================================================= */
-
-.medical-interface {
-  width: 62%;
-  padding: 20px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(4deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .medical-interface {
-  transform: rotate(1deg) scale(1.02);
-}
-.medical-header {
-  width: 45%;
-  height: 8px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  background: #8c67ff;
-}
-
-.medical-row {
-  display: flex;
-  justify-content: space-between;
-  height: 30px;
-  margin-bottom: 8px;
-  padding: 8px;
-  border-radius: 5px;
-  background: var(--cs-surface-raised);
-}
-
-.medical-row span:first-child {
-  width: 35%;
-}
-
-.medical-row span:last-child {
-  width: 20%;
-}
-
-.medical-row span {
-  height: 5px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* =========================================================
-   GENERIC FALLBACK VISUAL (for projects without a custom illustration)
-========================================================= */
-
-.generic-visual {
-  background:
-    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.12), transparent 45%), #0a0e10;
-}
-
-.generic-window {
-  width: 68%;
-  padding: 20px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(-2deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .generic-window {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.generic-window-top {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 18px;
-}
-
-.generic-window-top span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #596264;
-}
-
-.generic-line {
-  height: 6px;
-  margin-bottom: 12px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.generic-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  margin-top: 10px;
-  border-radius: 8px;
-  background: rgba(67, 228, 208, 0.1);
-  color: #43e4d0;
-  font-size: 18px;
-}
-
-/* =========================================================
-   RESERVATION VISUAL (table booking map)
-========================================================= */
-
-.reservation-visual {
-  background:
-    radial-gradient(circle at 30% 30%, rgba(67, 228, 208, 0.15), transparent 45%), #0a1011;
-}
-
-.reservation-interface {
-  width: 66%;
-  padding: 18px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(3deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .reservation-interface {
-  transform: rotate(1deg) scale(1.02);
-}
-
-.reservation-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.reservation-title-bar {
-  width: 45%;
-  height: 8px;
-  border-radius: 4px;
-  background: #43e4d0;
-}
-
-.reservation-badge {
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: rgba(67, 228, 208, 0.12);
-  color: #43e4d0;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.table-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.table-node {
-  aspect-ratio: 1;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--cs-border-soft);
-}
-
-.table-node.available {
-  background: rgba(67, 228, 208, 0.15);
-  border-color: rgba(67, 228, 208, 0.4);
-}
-
-.table-node.reserved {
-  background: rgba(255, 200, 87, 0.12);
-  border-color: rgba(255, 200, 87, 0.35);
-}
-
-/* =========================================================
-   INVENTORY VISUAL (stock level dashboard)
-========================================================= */
-
-.inventory-visual {
-  background:
-    radial-gradient(circle at 70% 70%, rgba(140, 103, 255, 0.15), transparent 45%), #0a0e10;
-}
-
-.inventory-interface {
-  width: 70%;
-  padding: 18px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(-3deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .inventory-interface {
-  transform: rotate(-1deg) scale(1.02);
-}
-
-.inventory-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.inventory-title-bar {
-  width: 40%;
-  height: 8px;
-  border-radius: 4px;
-  background: #8c67ff;
-}
-
-.inventory-badge {
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: rgba(255, 200, 87, 0.12);
-  color: #ffc857;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.inventory-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.inventory-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.inv-name {
-  width: 22%;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.inv-bar {
-  flex: 1;
-  height: 8px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-}
-
-.inv-fill {
+.project-image {
   display: block;
+  width: 100%;
   height: 100%;
-  border-radius: 4px;
+  object-fit: cover;
 }
 
-.inv-fill.ok {
-  width: 80%;
-  background: #43e4d0;
-}
-
-.inv-fill.low {
-  width: 40%;
-  background: #ffc857;
-}
-
-.inv-fill.critical {
-  width: 15%;
-  background: #ff6b6b;
-}
-
-/* =========================================================
-   IOT VISUAL (device/sensor dashboard)
-========================================================= */
-
-.iot-visual {
-  background:
-    radial-gradient(circle at 50% 40%, rgba(67, 228, 208, 0.15), transparent 45%), #0a1011;
-}
-
-.iot-interface {
-  width: 68%;
-  padding: 18px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(2deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .iot-interface {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.iot-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.iot-title-bar {
-  width: 40%;
-  height: 8px;
-  border-radius: 4px;
-  background: #43e4d0;
-}
-
-.iot-badge {
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: rgba(255, 107, 107, 0.12);
-  color: #ff6b6b;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.device-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.device-tile {
-  padding: 10px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--cs-border-soft);
-}
-
-.device-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-bottom: 8px;
-  border-radius: 50%;
-}
-
-.device-dot.online {
-  background: #43e4d0;
-  box-shadow: 0 0 8px rgba(67, 228, 208, 0.6);
-}
-
-.device-dot.offline {
-  background: #4a5556;
-}
-
-.device-line {
-  display: block;
-  height: 5px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* =========================================================
-   PHOTOGRAPHY BOOKING VISUAL
-========================================================= */
-
-.photography-visual {
-  background:
-    radial-gradient(circle at 30% 60%, rgba(255, 107, 157, 0.15), transparent 45%), #0a0e10;
-}
-
-.photo-interface {
-  width: 70%;
-  padding: 18px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(-2deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .photo-interface {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.photo-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.photo-title-bar {
-  width: 40%;
-  height: 8px;
-  border-radius: 4px;
-  background: #ff6b9d;
-}
-
-.photo-badge {
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: rgba(255, 107, 157, 0.12);
-  color: #ff6b9d;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.photo-thumbs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.photo-thumb {
-  flex: 1;
-  aspect-ratio: 1;
-  border-radius: 6px;
-  background: linear-gradient(135deg, rgba(255, 107, 157, 0.18), rgba(140, 103, 255, 0.12));
-}
-
-.slot-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.slot-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 8px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.slot-time {
-  width: 40%;
-  height: 5px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.slot-status {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-}
-
-.slot-status.booked {
-  background: rgba(255, 107, 157, 0.2);
-  border: 1px solid rgba(255, 107, 157, 0.5);
-}
-
-.slot-status.open {
-  background: rgba(67, 228, 208, 0.15);
-  border: 1px solid rgba(67, 228, 208, 0.4);
-}
-
-/* =========================================================
-   IMS VISUAL (information management / records table)
-========================================================= */
-
-.ims-visual {
-  background:
-    radial-gradient(circle at 60% 30%, rgba(140, 103, 255, 0.15), transparent 45%), #0a0e10;
-}
-
-.records-interface {
-  width: 72%;
-  padding: 18px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(3deg);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .records-interface {
-  transform: rotate(1deg) scale(1.02);
-}
-
-.records-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.records-title-bar {
-  width: 40%;
-  height: 8px;
-  border-radius: 4px;
-  background: #8c67ff;
-}
-
-.records-badge {
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: rgba(67, 228, 208, 0.12);
-  color: #43e4d0;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.records-table {
-  border: 1px solid var(--cs-border-soft);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.records-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--cs-border-soft);
-}
-
-.records-row:last-child {
-  border-bottom: none;
-}
-
-.records-row.records-head {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.rec-col-id {
-  width: 15%;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.rec-col-name {
-  flex: 1;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.rec-col-date {
-  width: 20%;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.records-row.records-head .rec-col-id,
-.records-row.records-head .rec-col-name,
-.records-row.records-head .rec-col-date {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* =========================================================
-   PROJECT CAPTION (compact, always visible on the card)
-========================================================= */
-
-.project-caption {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 22px 28px 26px;
-}
-
-.project-caption.reverse-caption {
-  flex-direction: row-reverse;
-}
-
-.project-caption.reverse-caption .project-caption-text {
-  text-align: right;
-}
-
-.project-category {
-  color: var(--cs-text-subtle);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.project-caption h3 {
-  margin: 10px 0 0;
-  color: var(--cs-text-bright);
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.project-cta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  color: var(--cs-text-muted);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  transition: color 0.25s ease;
-}
-
-.project-card:hover .project-cta,
-.project-card.is-active .project-cta {
-  color: #43e4d0;
-}
-
-.project-cta-icon {
-  width: 34px;
-  height: 34px;
+.detail-image-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid var(--cs-border-accent);
-  border-radius: 50%;
-  color: #43e4d0;
-  transition: all 0.25s ease;
+  height: 100%;
+  width: 100%;
+  padding: 28px;
 }
 
-.project-card:hover .project-cta-icon {
-  background: #43e4d0;
-  color: #07100f;
-  transform: rotate(45deg);
-}
-
-.project-card:hover .reverse-caption .project-cta-icon {
-  transform: rotate(-45deg);
-}
-
-.project-card.is-active .project-cta-icon {
-  background: #43e4d0;
-  color: #07100f;
+.detail-placeholder {
+  margin: 0;
+  color: var(--cs-text-subtle);
+  font-size: 13px;
+  text-align: center;
 }
 
 /* =========================================================
-   SKELETON LOADING
-========================================================= */
-
-@keyframes skeleton-shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.skeleton-card {
-  cursor: default;
-}
-
-.skeleton-card:hover {
-  transform: none;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: none;
-}
-
-.skeleton-visual {
-  background: linear-gradient(90deg, #1d2527 25%, #242d2f 37%, #1d2527 63%);
-  background-size: 400% 100%;
-  animation: skeleton-shimmer 1.6s ease-in-out infinite;
-}
-
-.skeleton-line {
-  display: block;
-  height: 10px;
-  border-radius: 4px;
-  background: linear-gradient(90deg, #20282a 25%, #2b3537 37%, #20282a 63%);
-  background-size: 400% 100%;
-  animation: skeleton-shimmer 1.6s ease-in-out infinite;
-}
-
-.skeleton-category {
-  width: 35%;
-  height: 8px;
-  margin-bottom: 12px;
-}
-
-.skeleton-title {
-  width: 65%;
-  height: 20px;
-}
-
-/* =========================================================
-   DETAIL PANEL (revealed beside the card on click)
+   DETAIL PANEL (text side, always visible)
 ========================================================= */
 
 .project-detail-panel {
@@ -917,65 +124,15 @@
     var(--cs-surface);
 }
 
-/* Layer 1: project image (default state) */
-.detail-image {
-  position: absolute;
-  inset: 0;
-  opacity: 1;
-  transform: scale(1);
-  background:
-    radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.08), transparent 45%), #0a0e10;
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
-
-.detail-image.is-hidden {
-  opacity: 0;
-  transform: scale(1.04);
-  pointer-events: none;
-}
-
-.detail-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.detail-image-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 28px;
-  background: radial-gradient(circle at 50% 50%, rgba(67, 228, 208, 0.1), transparent 45%), #0a0e10;
-}
-
-/* Layer 2: description (shown when the card is toggled open) */
 .detail-inner {
-  position: absolute;
-  inset: 0;
-  overflow-y: auto;
+  position: relative;
   padding: 28px;
-  opacity: 0;
-  transform: translateX(12px);
-  transition:
-    opacity 0.35s ease 0.05s,
-    transform 0.35s ease 0.05s;
-  pointer-events: none;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge legacy */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .detail-inner::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge (Chromium) */
-}
-
-.detail-inner.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
+  display: none;
 }
 
 .detail-loading {
@@ -987,11 +144,11 @@
   padding: 28px;
 }
 
-.detail-placeholder {
-  margin: 0;
+.project-category {
   color: var(--cs-text-subtle);
-  font-size: 13px;
-  text-align: center;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
 }
 
 .detail-inner h3 {
@@ -1042,125 +199,32 @@
 }
 
 /* =========================================================
-   MACEA PERMIT VISUAL
+   SKELETON LOADING
 ========================================================= */
 
-.parking-visual {
-  background:
-    radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.15), transparent 45%), #0a0e10;
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-.permit-interface {
-  width: 72%;
-  padding: 18px;
-  border: 1px solid var(--cs-border);
-  border-radius: 10px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-    var(--cs-surface);
-  box-shadow: var(--cs-shadow-md);
-  transform: rotate(-3deg);
-  transition: transform 0.4s ease;
+.skeleton-card {
+  cursor: default;
 }
 
-.project-card:hover .permit-interface {
-  transform: rotate(-1deg) scale(1.02);
+.skeleton-card:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
-.permit-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.permit-filter {
-  width: 70px;
-  height: 10px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.permit-filter.short {
-  width: 40px;
-}
-
-.permit-badge {
-  margin-left: auto;
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: rgba(67, 228, 208, 0.12);
-  color: #43e4d0;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.permit-table {
-  border: 1px solid var(--cs-border-soft);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.permit-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--cs-border-soft);
-}
-
-.permit-row:last-child {
-  border-bottom: none;
-}
-
-.permit-row.permit-head {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.col-id {
-  width: 15%;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.col-name {
-  flex: 1;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.col-status {
-  width: 18%;
-  height: 14px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.col-status.approved {
-  background: rgba(67, 228, 208, 0.15);
-  border: 1px solid rgba(67, 228, 208, 0.4);
-}
-
-.col-status.pending {
-  background: rgba(255, 200, 87, 0.12);
-  border: 1px solid rgba(255, 200, 87, 0.35);
-}
-
-.col-action {
-  width: 8%;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.permit-row.permit-head .col-id,
-.permit-row.permit-head .col-name,
-.permit-row.permit-head .col-status,
-.permit-row.permit-head .col-action {
-  background: rgba(255, 255, 255, 0.15);
+.skeleton-visual {
+  background: linear-gradient(90deg, #1d2527 25%, #242d2f 37%, #1d2527 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
 }
 
 /* =========================================================
@@ -1173,17 +237,7 @@
   }
 
   .project-visual {
-    height: clamp(250px, 32vw, 300px);
-  }
-
-  .project-caption,
-  .project-caption.reverse-caption {
-    padding: 20px 24px 24px;
-  }
-
-  .project-caption h3 {
-    max-width: 420px;
-    font-size: clamp(21px, 3vw, 26px);
+    min-height: clamp(250px, 32vw, 300px);
   }
 
   .project-detail-panel {
@@ -1197,7 +251,7 @@
 
 @media (max-width: 991px) {
   .project-visual {
-    height: clamp(240px, 35vw, 280px);
+    min-height: clamp(240px, 35vw, 280px);
   }
 
   .project-detail-panel {
@@ -1211,34 +265,11 @@
   }
 
   .project-visual {
-    height: clamp(210px, 58vw, 270px);
+    min-height: clamp(210px, 58vw, 270px);
   }
 
   .project-detail-panel {
     min-height: clamp(220px, 62vw, 300px);
-  }
-
-  .project-caption,
-  .project-caption.reverse-caption {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-    padding: 20px 22px 23px;
-  }
-
-  .project-caption.reverse-caption .project-caption-text {
-    text-align: left;
-  }
-
-  .project-caption h3 {
-    max-width: 100%;
-    font-size: clamp(19px, 5vw, 23px);
-    overflow-wrap: anywhere;
-  }
-
-  .project-cta {
-    width: 100%;
-    justify-content: space-between;
   }
 
   .detail-inner {
@@ -1253,27 +284,7 @@
 
 @media (max-width: 575px) {
   .project-visual {
-    height: clamp(190px, 57vw, 230px);
-  }
-
-  .dashboard {
-    width: min(85%, 320px);
-  }
-
-  .medical-interface {
-    width: min(75%, 280px);
-  }
-
-  .generic-window {
-    width: min(80%, 300px);
-  }
-
-  .reservation-interface {
-    width: min(82%, 300px);
-  }
-
-  .inventory-interface {
-    width: min(85%, 310px);
+    min-height: clamp(190px, 57vw, 230px);
   }
 
   .project-number {
@@ -1284,15 +295,5 @@
 
   .detail-inner {
     padding: 20px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .project-visual {
-    height: clamp(250px, 32vw, 300px);
-  }
-
-  .project-detail-panel {
-    min-height: clamp(230px, 29vw, 280px);
   }
 }

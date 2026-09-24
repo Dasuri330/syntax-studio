@@ -14,7 +14,6 @@
       "RequireJS",
       "Python"
     ],
-    "visualType": "medical",
     "image": "/images/CGH Project.jpg",
     "featured": true
   },
@@ -25,7 +24,6 @@
     "slug": "macea-permit-processing",
     "description": "A permit application platform built with Angular, TypeScript, PrimeNG, and ngx-permissions. I built data tables with frozen columns and role-based visibility, implemented audit logging, integrated REST APIs for permit retrieval, cancellation, and document downloads with server-side pagination, and developed responsive layouts for desktop and mobile.",
     "technologies": ["Angular", "TypeScript", "PrimeNG", "ngx-permissions", "Tailwind CSS"],
-    "visualType": "permit",
     "image": "/images/macea.jpg"
   },
   {
@@ -44,7 +42,6 @@
       "Font Awesome",
       "JSON"
     ],
-    "visualType": "reservation",
     "image": "/images/hapag-tanaw.jpg"
   },
   {
@@ -54,7 +51,6 @@
     "slug": "inventra",
     "description": "Inventra is a web-based Inventory & Warehouse Management System designed to help businesses efficiently monitor and manage their inventory within a single warehouse. The system provides a centralized dashboard for tracking product quantities, stock movements, low-stock items, and overall inventory valuation.The project is being developed following the Software Development Life Cycle (SDLC), starting with requirements analysis and UI/UX design before progressing toward frontend development, backend API integration, database implementation, and testing.",
     "technologies": ["React", "Vite", "Bootstrap", "TypeScript", "JSON", "Node.Js", "REST API"],
-    "visualType": "inventory",
     "image": "/images/inventra.jpg"
   },
   {
@@ -73,7 +69,6 @@
       "Pydantic",
       "MySQL"
     ],
-    "visualType": "ims",
     "image": "/images/mesims.jpg"
   },
   {
@@ -83,7 +78,6 @@
     "slug": "aqualuminus",
     "description": "AquaLuminus is a full-stack IoT dashboard designed for monitoring and managing water quality parameters in real-time. The system integrates with various sensors to collect data on pH levels, temperature, dissolved oxygen, and other critical metrics. It provides a user-friendly interface for visualizing this data through interactive charts and graphs, enabling efficient decision-making for water resource management.",
     "technologies": ["React.js", "Tailwind CSS", "PHP", "MySQL", "REST API"],
-    "visualType": "ims",
     "image": "/images/aqualuminus.png"
   }
 ]
