@@ -2,297 +2,25 @@
   @if (projects(); as projectList) {
     @for (project of projectList; track project.number) {
       <div class="row g-4 project-row align-items-stretch">
-        <!-- Card column -->
+        <!-- Image column -->
         <div class="col-lg-7" [class.order-lg-2]="$index % 2 === 1">
-          <div
-            class="project-card"
-            role="button"
-            tabindex="0"
-            [class.is-active]="selectedIndices.has($index)"
-            [attr.aria-expanded]="selectedIndices.has($index)"
-            (click)="toggleProject($index)"
-            (keydown.enter)="toggleProject($index)"
-            (keydown.space)="toggleProject($index); $event.preventDefault()"
-          >
-            <!-- Visual -->
-            <div
-              class="project-visual"
-              [class.cgh-visual]="project.visualType === 'medical'"
-              [class.parking-visual]="project.visualType === 'permit'"
-              [class.aqua-visual]="project.visualType === 'dashboard'"
-              [class.reservation-visual]="project.visualType === 'reservation'"
-              [class.inventory-visual]="project.visualType === 'inventory'"
-              [class.iot-visual]="project.visualType === 'iot'"
-              [class.photography-visual]="project.visualType === 'photography'"
-              [class.ims-visual]="project.visualType === 'ims'"
-              [class.generic-visual]="
-                !project.visualType ||
-                (project.visualType !== 'medical' &&
-                  project.visualType !== 'permit' &&
-                  project.visualType !== 'dashboard' &&
-                  project.visualType !== 'reservation' &&
-                  project.visualType !== 'inventory' &&
-                  project.visualType !== 'iot' &&
-                  project.visualType !== 'photography' &&
-                  project.visualType !== 'ims')
-              "
-            >
-              @switch (project.visualType) {
-                @case ('medical') {
-                  <div class="medical-interface">
-                    <div class="medical-header"></div>
-                    <div class="medical-row"><span></span><span></span></div>
-                    <div class="medical-row"><span></span><span></span></div>
-                    <div class="medical-row"><span></span><span></span></div>
-                    <div class="medical-row"><span></span><span></span></div>
-                  </div>
-                }
-                @case ('permit') {
-                  <div class="permit-interface">
-                    <div class="permit-toolbar">
-                      <span class="permit-filter"></span>
-                      <span class="permit-filter short"></span>
-                      <span class="permit-badge">EXPORT</span>
-                    </div>
-                    <div class="permit-table">
-                      <div class="permit-row permit-head">
-                        <span class="col-id"></span>
-                        <span class="col-name"></span>
-                        <span class="col-status"></span>
-                        <span class="col-action"></span>
-                      </div>
-                      <div class="permit-row">
-                        <span class="col-id"></span>
-                        <span class="col-name"></span>
-                        <span class="col-status approved"></span>
-                        <span class="col-action"></span>
-                      </div>
-                      <div class="permit-row">
-                        <span class="col-id"></span>
-                        <span class="col-name"></span>
-                        <span class="col-status pending"></span>
-                        <span class="col-action"></span>
-                      </div>
-                      <div class="permit-row">
-                        <span class="col-id"></span>
-                        <span class="col-name"></span>
-                        <span class="col-status approved"></span>
-                        <span class="col-action"></span>
-                      </div>
-                    </div>
-                  </div>
-                }
-                @case ('dashboard') {
-                  <div class="dashboard">
-                    <div class="dashboard-top"><span></span><span></span><span></span></div>
-                    <div class="dashboard-body">
-                      <div class="dashboard-sidebar">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                      <div class="dashboard-content">
-                        <div class="dashboard-heading"></div>
-                        <div class="dashboard-stats">
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
-                        <div class="dashboard-chart"></div>
-                      </div>
-                    </div>
-                  </div>
-                }
-                @case ('reservation') {
-                  <div class="reservation-interface">
-                    <div class="reservation-header">
-                      <span class="reservation-title-bar"></span>
-                      <span class="reservation-badge">TABLES</span>
-                    </div>
-                    <div class="table-grid">
-                      <span class="table-node available"></span>
-                      <span class="table-node reserved"></span>
-                      <span class="table-node available"></span>
-                      <span class="table-node reserved"></span>
-                      <span class="table-node available"></span>
-                      <span class="table-node available"></span>
-                      <span class="table-node reserved"></span>
-                      <span class="table-node available"></span>
-                      <span class="table-node available"></span>
-                    </div>
-                  </div>
-                }
-                @case ('inventory') {
-                  <div class="inventory-interface">
-                    <div class="inventory-header">
-                      <span class="inventory-title-bar"></span>
-                      <span class="inventory-badge">LOW STOCK</span>
-                    </div>
-                    <div class="inventory-rows">
-                      <div class="inventory-row">
-                        <span class="inv-name"></span>
-                        <span class="inv-bar"><span class="inv-fill ok"></span></span>
-                      </div>
-                      <div class="inventory-row">
-                        <span class="inv-name"></span>
-                        <span class="inv-bar"><span class="inv-fill low"></span></span>
-                      </div>
-                      <div class="inventory-row">
-                        <span class="inv-name"></span>
-                        <span class="inv-bar"><span class="inv-fill ok"></span></span>
-                      </div>
-                      <div class="inventory-row">
-                        <span class="inv-name"></span>
-                        <span class="inv-bar"><span class="inv-fill critical"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                }
-                @case ('iot') {
-                  <div class="iot-interface">
-                    <div class="iot-header">
-                      <span class="iot-title-bar"></span>
-                      <span class="iot-badge">LIVE</span>
-                    </div>
-                    <div class="device-grid">
-                      <div class="device-tile">
-                        <span class="device-dot online"></span>
-                        <span class="device-line"></span>
-                      </div>
-                      <div class="device-tile">
-                        <span class="device-dot online"></span>
-                        <span class="device-line"></span>
-                      </div>
-                      <div class="device-tile">
-                        <span class="device-dot offline"></span>
-                        <span class="device-line"></span>
-                      </div>
-                      <div class="device-tile">
-                        <span class="device-dot online"></span>
-                        <span class="device-line"></span>
-                      </div>
-                    </div>
-                  </div>
-                }
-                @case ('photography') {
-                  <div class="photo-interface">
-                    <div class="photo-header">
-                      <span class="photo-title-bar"></span>
-                      <span class="photo-badge">BOOKED</span>
-                    </div>
-                    <div class="photo-thumbs">
-                      <span class="photo-thumb"></span>
-                      <span class="photo-thumb"></span>
-                      <span class="photo-thumb"></span>
-                    </div>
-                    <div class="slot-list">
-                      <div class="slot-row">
-                        <span class="slot-time"></span>
-                        <span class="slot-status booked"></span>
-                      </div>
-                      <div class="slot-row">
-                        <span class="slot-time"></span>
-                        <span class="slot-status open"></span>
-                      </div>
-                      <div class="slot-row">
-                        <span class="slot-time"></span>
-                        <span class="slot-status booked"></span>
-                      </div>
-                    </div>
-                  </div>
-                }
-                @case ('ims') {
-                  <div class="records-interface">
-                    <div class="records-header">
-                      <span class="records-title-bar"></span>
-                      <span class="records-badge">SYNCED</span>
-                    </div>
-                    <div class="records-table">
-                      <div class="records-row records-head">
-                        <span class="rec-col-id"></span>
-                        <span class="rec-col-name"></span>
-                        <span class="rec-col-date"></span>
-                      </div>
-                      <div class="records-row">
-                        <span class="rec-col-id"></span>
-                        <span class="rec-col-name"></span>
-                        <span class="rec-col-date"></span>
-                      </div>
-                      <div class="records-row">
-                        <span class="rec-col-id"></span>
-                        <span class="rec-col-name"></span>
-                        <span class="rec-col-date"></span>
-                      </div>
-                      <div class="records-row">
-                        <span class="rec-col-id"></span>
-                        <span class="rec-col-name"></span>
-                        <span class="rec-col-date"></span>
-                      </div>
-                    </div>
-                  </div>
-                }
-                @default {
-                  <!-- Generic fallback visual for any project without a custom illustration -->
-                  <div class="generic-window">
-                    <div class="generic-window-top"><span></span><span></span><span></span></div>
-                    <div class="generic-window-body">
-                      <div class="generic-line" style="width: 70%"></div>
-                      <div class="generic-line" style="width: 45%"></div>
-                      <div class="generic-line" style="width: 60%"></div>
-                      <div class="generic-icon"><i class="bi bi-code-slash"></i></div>
-                    </div>
-                  </div>
-                }
-              }
-
-              <div class="project-number">
-                {{ project.number }}
-              </div>
-            </div>
-
-            <!-- Compact caption -->
-            <div class="project-caption" [class.reverse-caption]="$index % 2 === 1">
-              <div class="project-caption-text">
-                <span class="project-category">
-                  {{ project.category }}
-                </span>
-
-                <h3>
-                  {{ project.title }}
-                </h3>
-              </div>
-
-              <div class="project-cta">
-                <span>{{ selectedIndices.has($index) ? 'Hide details' : 'View details' }}</span>
-                <span class="project-cta-icon">
-                  <i
-                    class="bi"
-                    [class.bi-arrow-up-right]="$index % 2 === 0"
-                    [class.bi-arrow-up-left]="$index % 2 === 1"
-                  ></i>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Detail panel column: image by default, crossfades to description on click -->
-        <div class="col-lg-5" [class.order-lg-1]="$index % 2 === 1">
-          <div class="project-detail-panel">
-            <!-- Layer 1: project image (default state) -->
-            <div class="detail-image" [class.is-hidden]="selectedIndices.has($index)">
+          <div class="project-card">
+            <div class="project-visual">
               @if (project.image) {
-                <img [src]="project.image" [alt]="project.title" />
+                <img [src]="project.image" [alt]="project.title" class="project-image" />
               } @else {
                 <div class="detail-image-placeholder">
                   <p class="detail-placeholder">{{ project.title }}</p>
                 </div>
               }
             </div>
+          </div>
+        </div>
 
-            <!-- Layer 2: description (shown when card is toggled open) -->
-            <div class="detail-inner" [class.is-visible]="selectedIndices.has($index)">
+        <!-- Text column -->
+        <div class="col-lg-5" [class.order-lg-1]="$index % 2 === 1">
+          <div class="project-detail-panel">
+            <div class="detail-inner">
               <span class="project-category">
                 {{ project.category }}
               </span>
@@ -332,12 +60,6 @@
         <div class="col-lg-7" [class.order-lg-2]="item === 2">
           <div class="project-card skeleton-card">
             <div class="project-visual skeleton-visual"></div>
-            <div class="project-caption">
-              <div class="project-caption-text">
-                <span class="skeleton-line skeleton-category"></span>
-                <span class="skeleton-line skeleton-title"></span>
-              </div>
-            </div>
           </div>
         </div>
         <div class="col-lg-5" [class.order-lg-1]="item === 2">

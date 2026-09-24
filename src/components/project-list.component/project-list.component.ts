@@ -12,14 +12,5 @@ export class ProjectListComponent {
   // Pass in the list of projects to render. Undefined = still loading (shows skeleton).
   projects = input<featuredProject[] | undefined>(undefined);
 
-  selectedIndices = new Set<number>();
   skeletonItems = [0, 1, 2];
-
-  toggleProject(index: number): void {
-    if (this.selectedIndices.has(index)) {
-      this.selectedIndices.delete(index);
-    } else {
-      this.selectedIndices.add(index);
-    }
-  }
 }
