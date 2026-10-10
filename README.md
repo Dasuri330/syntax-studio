@@ -44,54 +44,76 @@ The portfolio uses a modern dark-themed interface with cyan and purple accents, 
 ## Project Structure
 
 ```text
-syntax-studio/
-│
-├── src/
-│   │
-│   ├── app/
-│   │   ├── app.config.ts
-│   │   ├── app.css
-│   │   ├── app.html
-│   │   ├── app.routes.ts
-│   │   ├── app.spec.ts
-│   │   └── app.ts
-│   │
-│   ├── components/
-│   │   └── navbar/
-│   │       ├── navbar.component.css
-│   │       ├── navbar.component.html
-│   │       └── navbar.component.ts
-│   │
-│   ├── pages/
-│   │   ├── home/
-│   │   │   ├── home.component/
-│   │   │   │   ├── home.component.css
-│   │   │   │   ├── home.component.html
-│   │   │   │   ├── home.component.spec.ts
-│   │   │   │   └── home.component.ts
-│   │   │   │
-│   │   │   └── featured-projects.component/
-│   │   │       ├── featured-projects.component.css
-│   │   │       ├── featured-projects.component.html
-│   │   │       ├── featured-projects.component.spec.ts
-│   │   │       └── featured-projects.component.ts
-│   │   │
-│   │   └── project.component/
-│   │       ├── project.component.css
-│   │       ├── project.component.html
-│   │       ├── project.component.spec.ts
-│   │       └── project.component.ts
-│   │
-│   ├── index.html
-│   ├── main.ts
-│   └── styles.css
-│
-├── public/
-├── angular.json
-├── package.json
-├── package-lock.json
-├── tsconfig.json
-└── README.md
+src
+ ┣ app
+ ┃ ┣ app.config.ts
+ ┃ ┣ app.css
+ ┃ ┣ app.html
+ ┃ ┣ app.routes.ts
+ ┃ ┣ app.spec.ts
+ ┃ ┗ app.ts
+ ┣ components
+ ┃ ┣ cta.component
+ ┃ ┃ ┣ cta.component.css
+ ┃ ┃ ┣ cta.component.html
+ ┃ ┃ ┣ cta.component.spec.ts
+ ┃ ┃ ┗ cta.component.ts
+ ┃ ┣ navbar.component
+ ┃ ┃ ┣ navbar.component.css
+ ┃ ┃ ┣ navbar.component.html
+ ┃ ┃ ┣ navbar.component.spec.ts
+ ┃ ┃ ┗ navbar.component.ts
+ ┃ ┗ project-list.component
+ ┃ ┃ ┣ project-list.component.css
+ ┃ ┃ ┣ project-list.component.html
+ ┃ ┃ ┣ project-list.component.spec.ts
+ ┃ ┃ ┗ project-list.component.ts
+ ┣ environments
+ ┃ ┣ environment.prod.ts
+ ┃ ┣ environment.template.ts
+ ┃ ┗ environment.ts
+ ┣ models
+ ┃ ┣ about.ts
+ ┃ ┣ experience.ts
+ ┃ ┣ featuredproject.ts
+ ┃ ┣ skill.ts
+ ┃ ┣ stat.ts
+ ┃ ┗ techlogo.ts
+ ┣ pages
+ ┃ ┣ about
+ ┃ ┃ ┗ about.component
+ ┃ ┃ ┃ ┣ about.component.css
+ ┃ ┃ ┃ ┣ about.component.html
+ ┃ ┃ ┃ ┣ about.component.spec.ts
+ ┃ ┃ ┃ ┗ about.component.ts
+ ┃ ┣ case-study
+ ┃ ┃ ┗ case-study.component
+ ┃ ┃ ┃ ┣ case-study.component.css
+ ┃ ┃ ┃ ┣ case-study.component.html
+ ┃ ┃ ┃ ┣ case-study.component.spec.ts
+ ┃ ┃ ┃ ┗ case-study.component.ts
+ ┃ ┣ home
+ ┃ ┃ ┣ featured-projects.component
+ ┃ ┃ ┃ ┣ featured-projects.component.css
+ ┃ ┃ ┃ ┣ featured-projects.component.html
+ ┃ ┃ ┃ ┣ featured-projects.component.spec.ts
+ ┃ ┃ ┃ ┗ featured-projects.component.ts
+ ┃ ┃ ┗ home.component
+ ┃ ┃ ┃ ┣ home.component.css
+ ┃ ┃ ┃ ┣ home.component.html
+ ┃ ┃ ┃ ┣ home.component.spec.ts
+ ┃ ┃ ┃ ┗ home.component.ts
+ ┃ ┗ projects
+ ┃ ┃ ┣ projects.component.css
+ ┃ ┃ ┣ projects.component.html
+ ┃ ┃ ┣ projects.component.spec.ts
+ ┃ ┃ ┗ projects.component.ts
+ ┣ services
+ ┃ ┣ contact-modal.service.spec.ts
+ ┃ ┗ contact-modal.service.ts
+ ┣ index.html
+ ┣ main.ts
+ ┗ styles.css
 ```
 
 ## Getting Started
